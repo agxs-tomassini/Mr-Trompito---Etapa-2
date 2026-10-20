@@ -50,7 +50,7 @@ El sitio fue desarrollado priorizando:
 
 **Etapa 2 — Desarrollo frontend**
 
-Esta etapa está orientada a mejorar la estructura del sitio, incorporar componentes reutilizables, optimizar el diseño responsive y desarrollar funcionalidades interactivas mediante JavaScript.
+Esta etapa está orientada a mejorar la estructura del sitio, incorporar componentes reutilizables, optimizar el diseño responsive y desarrollar funcionalidades interactivas.
 
 El proyecto se encuentra sujeto a futuras mejoras y ampliaciones.
 
