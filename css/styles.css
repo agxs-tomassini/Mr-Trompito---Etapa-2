@@ -156,12 +156,12 @@ header .navbar-toggler:active{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background-color: #25d366;
     color: #0a0909;
-    font-size: 2rem;
+    font-size: 25px;
     text-decoration: none;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.4);
     transition: background-color 0.3s ease,
