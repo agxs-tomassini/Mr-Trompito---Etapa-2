@@ -707,8 +707,8 @@ footer .newsletter{
     color: #FFF8F2;
     cursor: pointer;
     font-family: "Barlow Condensed", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight:700;
     padding: 6px 20px;
     transition: background-color 0.3s ease,
                 border-color 0.3s ease,
@@ -1184,4 +1184,92 @@ footer .newsletter{
 .fila-cotizadores .boton-cotizar{
     padding: 9px 16px;
     font-size: 1.1rem;
+}
+
+
+/* =============================
+   FOOTER - GRID Y FLEXBOX
+   ============================= */
+
+/* Mobile First */
+footer{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 25px;
+}
+
+/* Redes sociales */
+.footer-redes{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.footer-redes ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Newsletter */
+footer .newsletter{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    font-size: 13px;
+    color: #FF4A00;
+}
+
+footer .formulario-newsletter{
+    width: 100%;
+}
+
+footer .newsletter-campos{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+footer .newsletter-campos input[type="email"]{
+    flex: 1 1 220px;
+    min-width: 0;
+    max-width: 360px;
+}
+
+/* Derechos de autor */
+.footer-copyright{
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid #555555;
+    text-align: center;
+}
+
+/* =============================
+   FOOTER - ESCRITORIO
+   ============================= */
+
+@media (min-width: 992px){
+
+    footer{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 40px;
+        align-items: start;
+    }
+
+    footer .newsletter{
+        width: 100%;
+        max-width: 430px;
+        justify-self: end;
+    }
+
 }
