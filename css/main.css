@@ -579,12 +579,15 @@ footer .newsletter-campos input[type=email] {
   padding: 6px 24px;
   box-shadow: 0px 3px 8px #e75319;
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0.3s ease;
   /* Hover */
 }
 .boton-cotizar:hover {
   background-color: #292725;
   border-color: #292725;
   color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(231, 83, 25, 0.35);
 }
 .boton-cotizar {
   /* Foco mediante teclado */
@@ -602,6 +605,17 @@ footer .newsletter-campos input[type=email] {
   transform: scale(0.96);
 }
 
+/* =============================
+   ACCESIBILIDAD - MOVIMIENTO REDUCIDO
+   ============================= */
+@media (prefers-reduced-motion: reduce) {
+  .boton-cotizar {
+    transition: none;
+  }
+  .boton-cotizar:hover, .boton-cotizar:active {
+    transform: none;
+  }
+}
 /* =============================
    BOTON FLOTANTE WHATSAPP
    ============================= */
@@ -1122,6 +1136,11 @@ footer .newsletter-campos input[type=email] {
   border-radius: 12px;
   margin-bottom: 12px;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.faq-acordeon .accordion-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 .faq-acordeon {
   /* =============================
@@ -1181,6 +1200,37 @@ footer .newsletter-campos input[type=email] {
   margin-bottom: 12px;
 }
 
+/* =============================
+   ANIMACION DE RESPUESTAS FAQ
+   ============================= */
+@keyframes mostrar-respuesta {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.faq-acordeon .accordion-collapse.show .accordion-body {
+  animation: mostrar-respuesta 0.3s ease-out both;
+}
+
+/* =============================
+   ACCESIBILIDAD
+   ============================= */
+@media (prefers-reduced-motion: reduce) {
+  .faq-acordeon .accordion-item {
+    transition: none;
+  }
+  .faq-acordeon .accordion-item:hover {
+    transform: none;
+  }
+  .faq-acordeon .accordion-collapse.show .accordion-body {
+    animation: none;
+  }
+}
 /* =============================
    INICIO - MR. TROMPITO
    ============================= */

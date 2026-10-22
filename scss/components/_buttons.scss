@@ -27,12 +27,15 @@
         border-color 0.3s ease,
         color 0.3s ease,
         transform 0.2s ease;
+        box-shadow: 0.3s ease;
 
     /* Hover */
     &:hover {
         background-color: v.$color-oscuro;
         border-color: v.$color-oscuro;
         color: v.$color-blanco;
+        transform: translateY(-3px);
+        box-shadow: v.$sombra-boton-cotizar-hover;
     }
 
     /* Foco mediante teclado */
@@ -48,6 +51,23 @@
         transform: scale(0.96);
     }
 }
+
+
+/* =============================
+   ACCESIBILIDAD - MOVIMIENTO REDUCIDO
+   ============================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .boton-cotizar {
+        transition: none;
+
+        &:hover,
+        &:active {
+            transform: none;
+        }
+    }
+}
+
 
 /* =============================
    BOTON FLOTANTE WHATSAPP

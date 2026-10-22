@@ -71,6 +71,8 @@ $color-whatsapp-active: #0d6e3a;
 $sombra-boton-cotizar: 0px 3px 8px $color-primario;
 $sombra-whatsapp: 0px 4px 14px rgba(0, 0, 0, 0.4);
 $sombra-whatsapp-hover: 0px 6px 18px rgba(0, 0, 0, 0.5);
+$sombra-boton-cotizar-hover: 0 6px 12px rgba(231, 83, 25, 0.35);
+
 
 
 /* =============================
@@ -128,6 +130,7 @@ $color-control-active: rgba(231, 83, 25, 0.75);
 // Colores de interacción
 $color-acordeon-hover: #ffe0c7;
 $color-acordeon-active: #ffd2b0;
+$sombra-acordeon-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
 
 // Fondo de la pregunta abierta
 $degradado-acordeon: linear-gradient(
