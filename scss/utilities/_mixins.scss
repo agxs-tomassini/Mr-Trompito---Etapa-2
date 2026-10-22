@@ -1,0 +1,25 @@
+
+/* =============================
+   MIXINS - MR. TROMPITO
+   ============================= */
+
+// Pantallas de escritorio
+@mixin escritorio {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+// Navbar en dispositivos móviles
+@mixin menu-mobile {
+    @media (max-width: 991.98px) {
+        @content;
+    }
+}
+
+// Distribución desde el breakpoint LG de Bootstrap
+@mixin desktop-bootstrap {
+    @media (min-width: 992px) {
+        @content;
+    }
+}

@@ -1,0 +1,37 @@
+
+/* =============================
+   HEADER - MR. TROMPITO
+   ============================= */
+
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+/* Encabezado principal */
+
+header {
+    padding: 15px 20px;
+    box-shadow: 0px 2px 8px v.$color-sombra-header;
+    background: linear-gradient(
+        120deg,
+        v.$color-negro-puro,
+        v.$color-naranja
+    );
+
+    /* Responsive para dispositivos móviles */
+    @include m.menu-mobile {
+        padding: 10px 15px;
+    }
+}
+
+/* Logo principal */
+
+.logo {
+    display: block;
+    width: 350px;
+    height: auto;
+
+    /* Responsive para dispositivos móviles */
+    @include m.menu-mobile {
+        width: 160px;
+    }
+}

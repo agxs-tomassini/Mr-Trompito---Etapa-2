@@ -1,0 +1,20 @@
+{
+  "name": "mi-primer-pagina",
+  "version": "1.0.0",
+  "description": "Sitio web desarrollado para un emprendimiento familiar dedicado al alquiler de maquinaria y herramientas para la construcción, además de ofrecer servicios de mudanzas y fletes en Buenos Aires.",
+  "homepage": "https://github.com/agxs-tomassini/Mr-Trompito---Etapa-2#readme",
+  "bugs": {
+    "url": "https://github.com/agxs-tomassini/Mr-Trompito---Etapa-2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agxs-tomassini/Mr-Trompito---Etapa-2.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

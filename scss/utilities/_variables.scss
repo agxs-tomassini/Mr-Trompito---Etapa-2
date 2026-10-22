@@ -1,0 +1,42 @@
+/* =============================
+   VARIABLES - MR. TROMPITO
+   ============================= */
+
+// Colores
+$color-primario: #e75319;
+$color-naranja: #ff4000;
+$color-oscuro: #292725;
+$color-negro: #0a0909;
+$color-claro: #fff8f2;
+$color-crema: #ffefe1;
+$color-negro-puro: #000000;
+$color-sombra-header: #250d02;
+
+// Tipografías
+$fuente-principal: "Noto Sans", sans-serif;
+$fuente-titulos: "Barlow Condensed", sans-serif;
+
+// Bordes
+$radio-tarjetas: 16px;
+$radio-secciones: 20px;
+$radio-botones: 30px;
+
+
+/* =============================
+   VARIABLES DEL NAVBAR
+   ============================= */
+
+// Colores
+$color-blanco: #ffffff;
+$color-nav-hover: #010101;
+$color-sombra-nav-hover: #833e29;
+$color-panel-inicio: #030100;
+$color-panel-fin: #f33900;
+
+// Sombras
+$sombra-nav-enlace: 0px 1px 5px #4b1a0c82;
+$sombra-nav-hover: 0px 1px 4px $color-sombra-nav-hover;
+$sombra-boton-menu: 0px 4px 10px rgba(0, 0, 0, 0.3);
+$sombra-boton-menu-hover: 0px 6px 14px rgba(0, 0, 0, 0.35);
+$sombra-boton-menu-focus: 0 0 0 3px rgba(255, 239, 225, 0.5);
+$sombra-panel-mobile: 0px 1px 3px rgba(52, 17, 4, 0.682);

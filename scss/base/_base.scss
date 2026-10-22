@@ -1,0 +1,27 @@
+
+/* =============================
+   ESTILOS BASE - MR. TROMPITO
+   ============================= */
+
+@use "../utilities/variables" as v;
+
+/* Reset general */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cuerpo de la página */
+
+body {
+    background: linear-gradient(90deg, #ffebd9, #fae3d0);
+    color: v.$color-oscuro;
+    font-family: v.$fuente-principal;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

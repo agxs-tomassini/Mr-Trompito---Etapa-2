@@ -1,0 +1,1239 @@
+@charset "UTF-8";
+/* =============================
+   MR. TROMPITO - ARCHIVO MAESTRO
+   ============================= */
+/* =============================
+   ESTILOS BASE - MR. TROMPITO
+   ============================= */
+/* =============================
+   VARIABLES - MR. TROMPITO
+   ============================= */
+/* =============================
+   VARIABLES DEL NAVBAR
+   ============================= */
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cuerpo de la página */
+body {
+  background: linear-gradient(90deg, #ffebd9, #fae3d0);
+  color: #292725;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================
+   TIPOGRAFIA - MR. TROMPITO
+   ============================= */
+/* Titulos principales */
+h1 {
+  color: #e75319;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+h2 {
+  color: #292725;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #292725;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Parrafos */
+p {
+  color: #292725;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+/* =============================
+   HEADER - MR. TROMPITO
+   ============================= */
+/* =============================
+   MIXINS - MR. TROMPITO
+   ============================= */
+/* Encabezado principal */
+header {
+  padding: 15px 20px;
+  box-shadow: 0px 2px 8px #250d02;
+  background: linear-gradient(120deg, #000000, #ff4000);
+  /* Responsive para dispositivos móviles */
+}
+@media (max-width: 991.98px) {
+  header {
+    padding: 10px 15px;
+  }
+}
+
+/* Logo principal */
+.logo {
+  display: block;
+  width: 350px;
+  height: auto;
+  /* Responsive para dispositivos móviles */
+}
+@media (max-width: 991.98px) {
+  .logo {
+    width: 160px;
+  }
+}
+
+/* =============================
+   NAVEGACION - MR. TROMPITO
+   ============================= */
+/* =============================
+   NAVBAR DE BOOTSTRAP
+   ============================= */
+header .navbar {
+  padding: 0;
+  /* Enlaces de navegación */
+}
+header .navbar .nav-link {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffefe1;
+  border-radius: 10px;
+  padding: 2px 9px;
+  text-align: center;
+  box-shadow: 0px 1px 5px rgba(75, 26, 12, 0.5098039216);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  /* Hover y focus */
+}
+header .navbar .nav-link:hover, header .navbar .nav-link:focus {
+  background-color: #010101;
+  color: #ffffff;
+  box-shadow: 0px 1px 4px #833e29;
+}
+header .navbar .nav-link {
+  /* Hover */
+}
+header .navbar .nav-link:hover {
+  transform: translateY(-3px);
+}
+header .navbar .nav-link {
+  /* Foco visible */
+}
+header .navbar .nav-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+header .navbar .nav-link {
+  /* Click */
+}
+header .navbar .nav-link:active {
+  transform: translateY(0) scale(0.95);
+}
+header .navbar .nav-link {
+  /* Página activa */
+}
+header .navbar .nav-link.active {
+  background-color: #ffefe1;
+  color: #e75319;
+}
+header {
+  /* =============================
+     LISTA DE NAVEGACION
+     ============================= */
+}
+header .navbar-nav {
+  gap: 10px;
+  padding: 10px 0;
+  /* Menú desplegable en móvil */
+}
+@media (max-width: 991.98px) {
+  header .navbar-nav {
+    background: linear-gradient(90deg, #030100, #f33900);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px 0 5px;
+    box-shadow: 0px 1px 3px rgba(52, 17, 4, 0.682);
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+  }
+}
+header {
+  /* =============================
+     BOTON HAMBURGUESA
+     ============================= */
+}
+header .navbar-toggler {
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  background-color: #000000;
+  border-radius: 40%;
+  color: #ffefe1;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  /* Íconos */
+}
+header .navbar-toggler .bi {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+header .navbar-toggler {
+  /* Ícono de cerrar oculto */
+}
+header .navbar-toggler .icono-cerrar {
+  display: none;
+  font-size: 1.4rem;
+}
+header .navbar-toggler {
+  /* Menú abierto */
+}
+header .navbar-toggler[aria-expanded=true] .icono-abrir {
+  display: none;
+}
+header .navbar-toggler[aria-expanded=true] .icono-cerrar {
+  display: inline-block;
+}
+header .navbar-toggler {
+  /* Hover */
+}
+header .navbar-toggler:hover {
+  background-color: #ffefe1;
+  color: #e75319;
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.35);
+}
+header .navbar-toggler {
+  /* Focus */
+}
+header .navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(255, 239, 225, 0.5);
+}
+header .navbar-toggler {
+  /* Focus visible */
+}
+header .navbar-toggler:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+header .navbar-toggler {
+  /* Click */
+}
+header .navbar-toggler:active {
+  transform: scale(0.92);
+}
+
+/* ========================
+   WHATSAPP FLOTANTE
+   ======================== */
+.wsp-flotante {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #25d366;
+  color: #0a0909;
+  font-size: 25px;
+  text-decoration: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.wsp-flotante .bi {
+  line-height: 1;
+}
+
+.wsp-flotante:hover {
+  background-color: #128c4a;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.wsp-flotante:focus-visible {
+  outline: 3px solid #292725;
+  outline-offset: 3px;
+}
+
+.wsp-flotante:active {
+  background-color: #0d6e3a;
+  color: #ffffff;
+  transform: scale(0.95);
+}
+
+/* ========================
+   CONTENIDO PRINCIPAL
+   ======================== */
+main {
+  padding: 40px 25px;
+  flex: 1;
+}
+
+section {
+  margin-bottom: 35px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 5px #f0d2b7;
+  padding: 10px 15px;
+}
+
+/* ========================
+   MAQUINARIA - INICIO
+   ======================== */
+.contenido-maquinaria-inicio {
+  display: grid;
+  grid-template-areas: "texto" "imagen";
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.texto-maquinaria {
+  grid-area: texto;
+  padding: 0;
+}
+
+.imagen-maquinaria-inicio {
+  grid-area: imagen;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 10px;
+}
+
+.imagen-maquinaria-inicio img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin: 0;
+}
+
+/* ========================
+   LISTAS GENERALES
+   ======================== */
+main ul {
+  padding-left: 25px;
+}
+
+main li {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+/* ========================
+   LISTA DE SERVICIOS - INICIO
+   ======================== */
+.lista-servicios {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px 25px;
+  list-style: none;
+  padding: 10px;
+}
+
+.lista-servicios li {
+  background-color: #e25d29;
+  border: 2px solid #ee6b37;
+  color: #ffefe1;
+  border-radius: 26px;
+  padding: 20px 30px;
+  margin-bottom: 10px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0px 2px 10px #ee6b37;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.lista-servicios li:hover {
+  color: #000000;
+  transform: translateY(-3px);
+}
+
+/* ========================
+   ENLACES DEL CONTENIDO
+   ======================== */
+main a {
+  color: #FF4A00;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+main a:hover {
+  color: #292725;
+  border-bottom-color: #FF4A00;
+}
+
+main a:focus-visible {
+  outline: 2px solid #FF4A00;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+main a:active {
+  color: #e75319;
+}
+
+/* ========================
+   IMAGENES GENERALES
+   ======================== */
+figure {
+  margin: 20px 0;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0px 4px 10px #000000;
+}
+
+figcaption {
+  color: #292725;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* ========================
+   FORMULARIOS GENERALES
+   ======================== */
+.formulario-contacto {
+  margin-top: 25px;
+}
+
+.formulario-contacto label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  border: 2px solid #FFF8F2;
+  border-radius: 9px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  box-shadow: 0px 2px 6px #dbd0d0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario-contacto textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.formulario-contacto input:hover,
+.formulario-contacto textarea:hover {
+  border-color: #e0531b;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+  border-color: #FF4A00;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 74, 0, 0.25);
+}
+
+.formulario-contacto input[type=submit] {
+  background-color: #FF4A00;
+  border: 2px solid #FF4A00;
+  color: #FFF8F2;
+  cursor: pointer;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: auto;
+  box-shadow: 0px 2px 5px #e0531b;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.formulario-contacto input[type=submit]:hover {
+  background-color: #292725;
+  border-color: #292725;
+  box-shadow: 0px 2px 5px #292725;
+}
+
+.formulario-contacto input[type=submit]:focus-visible {
+  outline: 2px solid #292725;
+  outline-offset: 3px;
+}
+
+.formulario-contacto input[type=submit]:active {
+  transform: scale(0.96);
+}
+
+/* ========================
+   BOTONES DE COTIZACION
+   ======================== */
+.boton-cotizar {
+  background-color: #e75319;
+  border: 2px solid #e75319;
+  border-radius: 30px;
+  color: #ffefe1;
+  cursor: pointer;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 6px 24px;
+  box-shadow: 0px 3px 8px #e75319;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.boton-cotizar:hover {
+  background-color: #292725;
+  border-color: #292725;
+  color: #ffffff;
+}
+
+.boton-cotizar:focus-visible {
+  outline: 2px solid #292725;
+  outline-offset: 3px;
+}
+
+.boton-cotizar:active {
+  background-color: #0a0909;
+  border-color: #0a0909;
+  transform: scale(0.96);
+}
+
+/* ========================
+   GALERIA - CAROUSEL
+   ======================== */
+.galeria-carousel {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #292725;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.galeria-carousel .carousel-item {
+  background-color: #292725;
+  color: #ffefe1;
+}
+
+.galeria-carousel .carousel-item img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.galeria-carousel .carousel-caption {
+  background: linear-gradient(135deg, rgba(58, 28, 13, 0.88), rgba(107, 34, 9, 0.88));
+  border-radius: 12px;
+  padding: 10px 20px;
+  bottom: 45px;
+}
+
+.galeria-carousel .carousel-caption h3,
+.galeria-carousel .carousel-caption p {
+  color: #ffefe1;
+}
+
+.galeria-carousel .carousel-caption h3 {
+  margin-bottom: 4px;
+}
+
+.galeria-carousel .carousel-caption p {
+  margin-bottom: 0;
+}
+
+/* Indicadores del Carousel */
+.galeria-carousel .carousel-indicators [data-bs-target] {
+  background-color: #ffefe1;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.galeria-carousel .carousel-indicators [data-bs-target]:hover {
+  background-color: #ff4a00;
+  opacity: 1;
+}
+
+.galeria-carousel .carousel-indicators [data-bs-target]:active {
+  background-color: #ffffff;
+}
+
+.galeria-carousel .carousel-indicators .active {
+  background-color: #ff4a00;
+}
+
+/* Controles del Carousel */
+.galeria-carousel .carousel-control-prev,
+.galeria-carousel .carousel-control-next {
+  width: 10%;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.galeria-carousel .carousel-control-prev:hover,
+.galeria-carousel .carousel-control-next:hover {
+  background-color: rgba(231, 83, 25, 0.45);
+  opacity: 1;
+}
+
+.galeria-carousel .carousel-control-prev:focus-visible,
+.galeria-carousel .carousel-control-next:focus-visible {
+  outline: 2px solid #ffefe1;
+  outline-offset: -4px;
+}
+
+.galeria-carousel .carousel-control-prev:active,
+.galeria-carousel .carousel-control-next:active {
+  background-color: rgba(231, 83, 25, 0.75);
+}
+
+/* ========================
+   FOOTER
+   ======================== */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  background-color: #0A0909;
+  color: #FFF8F2;
+  padding: 30px 25px;
+}
+
+footer nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+footer p {
+  color: #FFF8F2;
+  margin-bottom: 0;
+}
+
+footer h2 {
+  color: #FFF8F2;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+footer ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+footer li {
+  margin: 0;
+}
+
+.linkFooter {
+  display: inline-block;
+  color: #FF4A00;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.linkFooter:hover {
+  color: #ff6600;
+  transform: translateY(-4px);
+  opacity: 0.8;
+}
+
+.linkFooter:focus-visible {
+  outline: 2px solid #FF4A00;
+  outline-offset: 4px;
+}
+
+.linkFooter:active {
+  transform: translateY(0) scale(0.92);
+}
+
+.logoRedes {
+  width: 33px;
+  height: 33px;
+  display: block;
+}
+
+/* ========================
+   NEWSLETTER
+   ======================== */
+footer .newsletter {
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.formulario-newsletter label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.newsletter-campos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.newsletter-campos input[type=email] {
+  background-color: #FFF8F2;
+  border: 2px solid #FFF8F2;
+  border-radius: 9px;
+  color: #292725;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  min-width: 240px;
+  padding: 8px 12px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-campos input[type=email]:hover {
+  border-color: #e0531b;
+}
+
+.newsletter-campos input[type=email]:focus {
+  border-color: #FF4A00;
+  box-shadow: 0 0 0 3px rgba(255, 74, 0, 0.35);
+  outline: none;
+}
+
+.newsletter-campos input[type=submit] {
+  background-color: #FF4A00;
+  border: 2px solid #FF4A00;
+  border-radius: 9px;
+  color: #FFF8F2;
+  cursor: pointer;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 6px 20px;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.newsletter-campos input[type=submit]:hover {
+  background-color: #FFF8F2;
+  border-color: #FFF8F2;
+  color: #292725;
+}
+
+.newsletter-campos input[type=submit]:focus-visible {
+  outline: 2px solid #FFF8F2;
+  outline-offset: 3px;
+}
+
+.newsletter-campos input[type=submit]:active {
+  transform: scale(0.95);
+}
+
+/* ========================
+   FAQ - ACORDEON
+   ======================== */
+.faq-acordeon .accordion-item {
+  background-color: #FFF8F2;
+  border: 2px solid #f0d2b7;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.faq-acordeon .accordion-button {
+  background-color: #FFF8F2;
+  color: #292725;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 14px 20px;
+  box-shadow: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.faq-acordeon .accordion-button:hover {
+  background-color: #ffe0c7;
+  color: #e75319;
+}
+
+.faq-acordeon .accordion-button:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 74, 0, 0.3);
+}
+
+.faq-acordeon .accordion-button:active {
+  background-color: #ffd2b0;
+}
+
+.faq-acordeon .accordion-button:not(.collapsed) {
+  background: linear-gradient(135deg, #3a1c0d, #6b2209);
+  color: #ffefe1;
+  box-shadow: none;
+}
+
+.faq-acordeon .accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1);
+}
+
+.faq-acordeon .accordion-body {
+  background-color: #FFF8F2;
+  padding: 18px 20px 6px;
+}
+
+.faq-acordeon .accordion-body p {
+  margin-bottom: 12px;
+}
+
+/* ========================
+   COTIZADOR DE PRESUPUESTOS
+   ======================== */
+.seccion-cotizador {
+  background-color: #FFF8F2;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 35px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.seccion-cotizador h2 {
+  border-left: 5px solid #FF4A00;
+  padding-left: 15px;
+}
+
+.seccion-cotizador h2 .bi {
+  color: #FF4A00;
+  margin-right: 10px;
+  font-size: 1.8rem;
+}
+
+.seccion-cotizador .formulario-contacto {
+  width: 100%;
+  max-width: none;
+  margin: 25px 0 0;
+}
+
+/* Distribucion de campos - Mobile First */
+.grilla-formulario {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 25px;
+  row-gap: 5px;
+}
+
+.campo-formulario {
+  min-width: 0;
+}
+
+.campo-formulario label {
+  display: block;
+  margin-bottom: 8px;
+  color: #292725;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.campo-formulario input,
+.campo-formulario textarea,
+.campo-formulario select {
+  display: block;
+  width: 100%;
+  background-color: #ffffff;
+  border: 2px solid #f0d2b7;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  box-shadow: 0px 2px 6px #dbd0d0;
+}
+
+/* Selector de maquinaria y traslados */
+.seccion-cotizador select {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seccion-cotizador select:hover {
+  border-color: #e0531b;
+}
+
+.seccion-cotizador select:focus {
+  border-color: #FF4A00;
+  box-shadow: 0 0 0 3px rgba(255, 74, 0, 0.2);
+  outline: none;
+}
+
+/* Estados de campos del cotizador */
+.seccion-cotizador .formulario-contacto input:focus,
+.seccion-cotizador .formulario-contacto textarea:focus {
+  border-color: #FF4A00;
+  box-shadow: 0 0 0 3px rgba(255, 74, 0, 0.2);
+  outline: none;
+}
+
+.campo-formulario textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+/* Campos de ancho completo */
+.campo-completo {
+  grid-column: 1/-1;
+}
+
+/* Contenedor del boton */
+.contenedor-boton {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.contenedor-boton .boton-cotizar {
+  width: 100%;
+  max-width: 360px;
+  margin: 0;
+}
+
+.seccion-cotizador .boton-cotizar {
+  padding: 12px 24px;
+  font-size: 1.3rem;
+}
+
+/* ========================
+   CATALOGO DE SERVICIOS
+   ======================== */
+.seccion-catalogo {
+  padding: 25px;
+}
+
+.contenedor-catalogo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* ========================
+   TARJETAS DEL CATALOGO
+   ======================== */
+.tarjeta-catalogo {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF8F2;
+  border: 1px solid #f0d2b7;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-catalogo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(231, 83, 25, 0.25);
+}
+
+.tarjeta-catalogo figure {
+  margin: 0 0 15px;
+}
+
+.tarjeta-catalogo figure img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.tarjeta-catalogo h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.tarjeta-catalogo p {
+  text-align: center;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+/* Imagen temporal para equipos sin foto */
+.imagen-pendiente {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 210px;
+  margin-bottom: 15px;
+  background-color: #292725;
+  border-radius: 10px;
+  color: #ffefe1;
+}
+
+.imagen-pendiente .bi {
+  color: #ff6500;
+  font-size: 3rem;
+}
+
+.imagen-pendiente span {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.1rem;
+}
+
+/* Enlaces de presupuesto del catalogo */
+.tarjeta-catalogo .boton-cotizar {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  text-align: center;
+  text-decoration: none;
+  color: #ffefe1;
+  border-bottom: 2px solid #e75319;
+}
+
+.tarjeta-catalogo .boton-cotizar:hover {
+  color: #ffffff;
+  border-bottom-color: #292725;
+}
+
+.tarjeta-catalogo .boton-cotizar:focus-visible {
+  outline: 2px solid #292725;
+  outline-offset: 3px;
+}
+
+.tarjeta-catalogo:focus-within {
+  box-shadow: 0 8px 20px rgba(231, 83, 25, 0.25);
+}
+
+/* ========================
+   DISEÑO RESPONSIVE - MOVIL
+   ======================== */
+@media (max-width: 991.98px) {
+  .wsp-flotante {
+    width: 54px;
+    height: 54px;
+    right: 15px;
+    bottom: 15px;
+    font-size: 1.8rem;
+  }
+}
+/* ========================
+   DISEÑO RESPONSIVE - ESCRITORIO
+   ======================== */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+  /* Maquinaria de Inicio */
+  .contenido-maquinaria-inicio {
+    grid-template-areas: "texto imagen";
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Carousel */
+  .galeria-carousel .carousel-item img {
+    height: 480px;
+  }
+  /* Cotizador */
+  .grilla-formulario {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  /* Catalogo */
+  .contenedor-catalogo {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+/* =============================
+   COTIZADOR CON BOOTSTRAP
+   ============================= */
+/* Formularios lado a lado */
+.fila-cotizadores .seccion-cotizador {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+/* Formularios dentro de las tarjetas */
+.fila-cotizadores .formulario-contacto {
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Evitar separaciones duplicadas */
+.fila-cotizadores .form-control,
+.fila-cotizadores .form-select {
+  margin-bottom: 0;
+}
+
+/* Mantener apariencia de los selectores */
+.fila-cotizadores .form-select {
+  background-color: #ffffff;
+  border: 2px solid #f0d2b7;
+  border-radius: 10px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  padding: 10px;
+  box-shadow: 0px 2px 6px #dbd0d0;
+}
+
+/* Interacción de los selectores */
+.fila-cotizadores .form-select:focus {
+  border-color: #FF4A00;
+  box-shadow: 0 0 0 3px rgba(255, 74, 0, 0.2);
+}
+
+/* Botones al final de cada formulario */
+.fila-cotizadores .boton-cotizar {
+  margin: 0;
+  max-width: none;
+  padding: 12px 24px;
+}
+
+/* Conservar los colores en los botones Bootstrap */
+.fila-cotizadores .boton-cotizar:hover {
+  background-color: #292725;
+  border-color: #292725;
+  color: #ffffff;
+}
+
+/* =============================
+   COTIZADOR - DISEÑO COMPACTO
+   ============================= */
+.fila-cotizadores .seccion-cotizador {
+  padding: 20px;
+}
+
+.fila-cotizadores .formulario-contacto {
+  margin-top: 12px;
+}
+
+.fila-cotizadores .form-label {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.fila-cotizadores .form-control,
+.fila-cotizadores .form-select {
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* Reducir altura de los comentarios */
+.fila-cotizadores textarea.form-control {
+  min-height: 90px;
+}
+
+/* Botones más compactos */
+.fila-cotizadores .boton-cotizar {
+  padding: 9px 16px;
+  font-size: 1.1rem;
+}
+
+/* =============================
+   FOOTER - GRID Y FLEXBOX
+   ============================= */
+/* Mobile First */
+footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  padding: 30px 25px;
+}
+
+/* Redes sociales */
+.footer-redes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.footer-redes ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Newsletter */
+footer .newsletter {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: 13px;
+  color: #FF4A00;
+}
+
+footer .formulario-newsletter {
+  width: 100%;
+}
+
+footer .newsletter-campos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+footer .newsletter-campos input[type=email] {
+  flex: 1 1 220px;
+  min-width: 0;
+  max-width: 360px;
+}
+
+/* Derechos de autor */
+.footer-copyright {
+  grid-column: 1/-1;
+  width: 100%;
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid #555555;
+  text-align: center;
+}
+
+/* =============================
+   FOOTER - ESCRITORIO
+   ============================= */
+@media (min-width: 992px) {
+  footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 40px;
+    align-items: start;
+  }
+  footer .newsletter {
+    width: 100%;
+    max-width: 430px;
+    justify-self: end;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

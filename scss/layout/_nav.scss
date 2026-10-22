@@ -1,0 +1,158 @@
+
+/* =============================
+   NAVEGACION - MR. TROMPITO
+   ============================= */
+
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+/* =============================
+   NAVBAR DE BOOTSTRAP
+   ============================= */
+
+header {
+
+    .navbar {
+        padding: 0;
+
+        /* Enlaces de navegación */
+        .nav-link {
+            font-family: v.$fuente-titulos;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: v.$color-crema;
+            border-radius: 10px;
+            padding: 2px 9px;
+            text-align: center;
+            box-shadow: v.$sombra-nav-enlace;
+
+            transition:
+                background-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.2s ease,
+                box-shadow 0.3s ease;
+
+            /* Hover y focus */
+            &:hover,
+            &:focus {
+                background-color: v.$color-nav-hover;
+                color: v.$color-blanco;
+                box-shadow: v.$sombra-nav-hover;
+            }
+
+            /* Hover */
+            &:hover {
+                transform: translateY(-3px);
+            }
+
+            /* Foco visible */
+            &:focus-visible {
+                outline: 2px solid v.$color-blanco;
+                outline-offset: 2px;
+            }
+
+            /* Click */
+            &:active {
+                transform: translateY(0) scale(0.95);
+            }
+
+            /* Página activa */
+            &.active {
+                background-color: v.$color-crema;
+                color: v.$color-primario;
+            }
+        }
+    }
+
+    /* =============================
+       LISTA DE NAVEGACION
+       ============================= */
+
+    .navbar-nav {
+        gap: 10px;
+        padding: 10px 0;
+
+        /* Menú desplegable en móvil */
+        @include m.menu-mobile {
+            background: linear-gradient(
+                90deg,
+                v.$color-panel-inicio,
+                v.$color-panel-fin
+            );
+
+            border-radius: 15px;
+            padding: 15px;
+            margin: 10px 0 5px;
+            box-shadow: v.$sombra-panel-mobile;
+            max-height: calc(100vh - 110px);
+            overflow-y: auto;
+        }
+    }
+
+    /* =============================
+       BOTON HAMBURGUESA
+       ============================= */
+
+    .navbar-toggler {
+        width: 46px;
+        height: 46px;
+        padding: 0;
+        background-color: v.$color-negro-puro;
+        border-radius: 40%;
+        color: v.$color-crema;
+        box-shadow: v.$sombra-boton-menu;
+
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.2s ease,
+            box-shadow 0.3s ease;
+
+        /* Íconos */
+        .bi {
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        /* Ícono de cerrar oculto */
+        .icono-cerrar {
+            display: none;
+            font-size: 1.4rem;
+        }
+
+        /* Menú abierto */
+        &[aria-expanded="true"] {
+
+            .icono-abrir {
+                display: none;
+            }
+
+            .icono-cerrar {
+                display: inline-block;
+            }
+        }
+
+        /* Hover */
+        &:hover {
+            background-color: v.$color-crema;
+            color: v.$color-primario;
+            box-shadow: v.$sombra-boton-menu-hover;
+        }
+
+        /* Focus */
+        &:focus {
+            box-shadow: v.$sombra-boton-menu-focus;
+        }
+
+        /* Focus visible */
+        &:focus-visible {
+            outline: 2px solid v.$color-blanco;
+            outline-offset: 3px;
+        }
+
+        /* Click */
+        &:active {
+            transform: scale(0.92);
+        }
+    }
+}
