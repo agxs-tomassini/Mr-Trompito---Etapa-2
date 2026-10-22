@@ -1,9 +1,9 @@
-
 /* =============================
    TIPOGRAFIA - MR. TROMPITO
    ============================= */
 
 @use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
 
 /* Titulos principales */
 
@@ -14,6 +14,9 @@ h1 {
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 15px;
+    @include m.escritorio {
+    font-size: 3rem;
+    }
 }
 
 h2 {

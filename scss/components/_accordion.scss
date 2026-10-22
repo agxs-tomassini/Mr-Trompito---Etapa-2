@@ -1,0 +1,82 @@
+
+/* =============================
+   ACCORDION - MR. TROMPITO
+   ============================= */
+
+@use "../utilities/variables" as v;
+
+/* =============================
+   ACORDEON DE FAQ
+   ============================= */
+
+.faq-acordeon {
+
+    /* Contenedor de cada pregunta */
+    .accordion-item {
+        background-color: v.$color-claro;
+        border: 2px solid v.$color-borde-catalogo;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        overflow: hidden;
+    }
+
+    /* =============================
+       BOTONES DEL ACORDEON
+       ============================= */
+
+    .accordion-button {
+        background-color: v.$color-claro;
+        color: v.$color-oscuro;
+        font-family: v.$fuente-titulos;
+        font-size: 1.4rem;
+        font-weight: 600;
+        padding: 14px 20px;
+        box-shadow: none;
+
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
+
+        /* Hover */
+        &:hover {
+            background-color: v.$color-acordeon-hover;
+            color: v.$color-primario;
+        }
+
+        /* Focus */
+        &:focus {
+            border-color: transparent;
+            box-shadow: v.$sombra-focus-acordeon;
+        }
+
+        /* Click */
+        &:active {
+            background-color: v.$color-acordeon-active;
+        }
+
+        /* Pregunta abierta */
+        &:not(.collapsed) {
+            background: v.$degradado-acordeon;
+            color: v.$color-crema;
+            box-shadow: none;
+
+            /* Flecha de la pregunta abierta */
+            &::after {
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+
+    /* =============================
+       RESPUESTAS DEL ACORDEON
+       ============================= */
+
+    .accordion-body {
+        background-color: v.$color-claro;
+        padding: 18px 20px 6px;
+
+        p {
+            margin-bottom: 12px;
+        }
+    }
+}

@@ -25,3 +25,85 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+
+/* =============================
+   CONTENIDO PRINCIPAL
+   ============================= */
+
+main {
+    padding: 40px 25px;
+    flex: 1;
+
+    /* Listas generales */
+    ul {
+        padding-left: 25px;
+    }
+
+    li {
+        font-family: v.$fuente-titulos;
+        font-size: 1.1rem;
+        font-weight: 400;
+        margin-bottom: 15px;
+    }
+
+    /* Enlaces del contenido */
+    a {
+        color: v.$color-enlaces;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+
+        transition:
+            color 0.3s ease,
+            border-color 0.3s ease;
+
+        &:hover {
+            color: v.$color-oscuro;
+            border-bottom-color: v.$color-enlaces;
+        }
+
+        &:focus-visible {
+            outline: 2px solid v.$color-enlaces;
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+
+        &:active {
+            color: v.$color-primario;
+        }
+    }
+}
+
+/* =============================
+   SECCIONES GENERALES
+   ============================= */
+
+section {
+    margin-bottom: 35px;
+    border-radius: v.$radio-secciones;
+    box-shadow: 0px 2px 5px v.$color-borde-catalogo;
+    padding: 10px 15px;
+}
+
+/* =============================
+   IMAGENES GENERALES
+   ============================= */
+
+figure {
+    margin: 20px 0;
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 6px;
+        box-shadow: 0px 4px 10px v.$color-negro-puro;
+    }
+}
+
+figcaption {
+    color: v.$color-oscuro;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 8px;
+}

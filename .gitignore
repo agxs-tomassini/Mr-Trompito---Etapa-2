@@ -1,0 +1,11 @@
+
+# Dependencias instaladas con npm
+node_modules/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuracion local
+.env
+.env.local

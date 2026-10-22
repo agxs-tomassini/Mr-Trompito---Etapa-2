@@ -1,0 +1,116 @@
+
+/* =============================
+   CAROUSEL - MR. TROMPITO
+   ============================= */
+
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+/* =============================
+   CONTENEDOR PRINCIPAL
+   ============================= */
+
+.galeria-carousel {
+    border-radius: v.$radio-tarjetas;
+    overflow: hidden;
+    background-color: v.$color-oscuro;
+    box-shadow: v.$sombra-carousel;
+
+    /* =============================
+       ELEMENTOS DEL CAROUSEL
+       ============================= */
+
+    .carousel-item {
+        background-color: v.$color-oscuro;
+        color: v.$color-crema;
+
+        img {
+            height: 300px;
+            object-fit: cover;
+
+            /* Escritorio */
+            @include m.escritorio {
+                height: 480px;
+            }
+        }
+    }
+
+    /* =============================
+       TEXTOS SOBRE LAS IMAGENES
+       ============================= */
+
+    .carousel-caption {
+        background: v.$degradado-carousel;
+        border-radius: 12px;
+        padding: 10px 20px;
+        bottom: 45px;
+
+        h3,
+        p {
+            color: v.$color-crema;
+        }
+
+        h3 {
+            margin-bottom: 4px;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    /* =============================
+       INDICADORES DEL CAROUSEL
+       ============================= */
+
+    .carousel-indicators {
+
+        [data-bs-target] {
+            background-color: v.$color-crema;
+
+            transition:
+                background-color 0.3s ease,
+                opacity 0.3s ease;
+
+            &:hover {
+                background-color: v.$color-enlaces;
+                opacity: 1;
+            }
+
+            &:active {
+                background-color: v.$color-blanco;
+            }
+        }
+
+        .active {
+            background-color: v.$color-enlaces;
+        }
+    }
+
+    /* =============================
+       CONTROLES DE NAVEGACION
+       ============================= */
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+
+        transition:
+            background-color 0.3s ease,
+            opacity 0.3s ease;
+
+        &:hover {
+            background-color: v.$color-control-hover;
+            opacity: 1;
+        }
+
+        &:focus-visible {
+            outline: 2px solid v.$color-crema;
+            outline-offset: -4px;
+        }
+
+        &:active {
+            background-color: v.$color-control-active;
+        }
+    }
+}

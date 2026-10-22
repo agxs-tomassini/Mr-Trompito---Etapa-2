@@ -1,0 +1,117 @@
+
+/* =============================
+   BOTONES - MR. TROMPITO
+   ============================= */
+
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+/* =============================
+   BOTONES DE COTIZACION
+   ============================= */
+
+.boton-cotizar {
+    background-color: v.$color-primario;
+    border: 2px solid v.$color-primario;
+    border-radius: v.$radio-botones;
+    color: v.$color-crema;
+    cursor: pointer;
+    font-family: v.$fuente-titulos;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 6px 24px;
+    box-shadow: v.$sombra-boton-cotizar;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
+
+    /* Hover */
+    &:hover {
+        background-color: v.$color-oscuro;
+        border-color: v.$color-oscuro;
+        color: v.$color-blanco;
+    }
+
+    /* Foco mediante teclado */
+    &:focus-visible {
+        outline: 2px solid v.$color-oscuro;
+        outline-offset: 3px;
+    }
+
+    /* Click */
+    &:active {
+        background-color: v.$color-negro;
+        border-color: v.$color-negro;
+        transform: scale(0.96);
+    }
+}
+
+/* =============================
+   BOTON FLOTANTE WHATSAPP
+   ============================= */
+
+.wsp-flotante {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1030;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+    background-color: v.$color-whatsapp;
+    color: v.$color-negro;
+    font-size: 25px;
+    text-decoration: none;
+
+    box-shadow: v.$sombra-whatsapp;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+
+    /* Icono */
+    .bi {
+        line-height: 1;
+    }
+
+    /* Hover */
+    &:hover {
+        background-color: v.$color-whatsapp-hover;
+        color: v.$color-blanco;
+        transform: scale(1.1);
+        box-shadow: v.$sombra-whatsapp-hover;
+    }
+
+    /* Foco mediante teclado */
+    &:focus-visible {
+        outline: 3px solid v.$color-oscuro;
+        outline-offset: 3px;
+    }
+
+    /* Click */
+    &:active {
+        background-color: v.$color-whatsapp-active;
+        color: v.$color-blanco;
+        transform: scale(0.95);
+    }
+
+    /* Responsive móvil */
+    @include m.menu-mobile {
+        width: 54px;
+        height: 54px;
+        right: 15px;
+        bottom: 15px;
+        font-size: 1.8rem;
+    }
+}

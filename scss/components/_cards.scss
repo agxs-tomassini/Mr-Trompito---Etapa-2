@@ -1,0 +1,138 @@
+
+/* =============================
+   CATALOGO - MR. TROMPITO
+   ============================= */
+
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+/* =============================
+   SECCIONES DEL CATALOGO
+   ============================= */
+
+.seccion-catalogo {
+    padding: 25px;
+}
+
+/* =============================
+   CONTENEDOR DEL CATALOGO
+   ============================= */
+
+.contenedor-catalogo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    /* Escritorio: tres columnas */
+    @include m.escritorio {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* =============================
+   TARJETAS DEL CATALOGO
+   ============================= */
+
+.tarjeta-catalogo {
+    display: flex;
+    flex-direction: column;
+    background-color: v.$color-claro;
+    border: 1px solid v.$color-borde-catalogo;
+    border-radius: v.$radio-tarjetas;
+    padding: 20px;
+    box-shadow: v.$sombra-tarjeta;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    /* Hover de la tarjeta */
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: v.$sombra-tarjeta-hover;
+    }
+
+    /* Foco dentro de la tarjeta */
+    &:focus-within {
+        box-shadow: v.$sombra-tarjeta-hover;
+    }
+
+    /* Imagen de la tarjeta */
+    figure {
+        margin: 0 0 15px;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    }
+
+    /* Título */
+    h3 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Descripción */
+    p {
+        text-align: center;
+        flex-grow: 1;
+        margin-bottom: 20px;
+    }
+
+    /* Botón de presupuesto */
+    .boton-cotizar {
+        display: block;
+        width: 100%;
+        margin-top: auto;
+        text-align: center;
+        text-decoration: none;
+        color: v.$color-crema;
+        border-bottom: 2px solid v.$color-primario;
+
+        &:hover {
+            color: v.$color-blanco;
+            border-bottom-color: v.$color-oscuro;
+        }
+
+        &:focus-visible {
+            outline: 2px solid v.$color-oscuro;
+            outline-offset: 3px;
+        }
+    }
+}
+
+/* =============================
+   IMAGENES PENDIENTES
+   ============================= */
+
+.imagen-pendiente {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+    height: 210px;
+    margin-bottom: 15px;
+
+    background-color: v.$color-oscuro;
+    border-radius: 10px;
+    color: v.$color-crema;
+
+    /* Ícono */
+    .bi {
+        color: v.$color-icono-pendiente;
+        font-size: 3rem;
+    }
+
+    /* Texto */
+    span {
+        font-family: v.$fuente-titulos;
+        font-size: 1.1rem;
+    }
+}

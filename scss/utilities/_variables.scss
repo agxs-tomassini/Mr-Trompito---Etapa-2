@@ -40,3 +40,113 @@ $sombra-boton-menu: 0px 4px 10px rgba(0, 0, 0, 0.3);
 $sombra-boton-menu-hover: 0px 6px 14px rgba(0, 0, 0, 0.35);
 $sombra-boton-menu-focus: 0 0 0 3px rgba(255, 239, 225, 0.5);
 $sombra-panel-mobile: 0px 1px 3px rgba(52, 17, 4, 0.682);
+
+
+
+/* =============================
+   VARIABLES DEL FOOTER
+   ============================= */
+
+$color-enlaces: #ff4a00;
+$color-enlaces-hover: #ff6600;
+$color-borde-footer: #555555;
+$color-borde-input: #e0531b;
+$color-sombra-input: #dbd0d0;
+
+// Sombras y estados interactivos
+$sombra-input: 0px 2px 6px $color-sombra-input;
+$sombra-focus-newsletter: 0 0 0 3px rgba(255, 74, 0, 0.35);
+
+
+/* =============================
+   VARIABLES DE BOTONES
+   ============================= */
+
+// WhatsApp
+$color-whatsapp: #25d366;
+$color-whatsapp-hover: #128c4a;
+$color-whatsapp-active: #0d6e3a;
+
+// Sombras
+$sombra-boton-cotizar: 0px 3px 8px $color-primario;
+$sombra-whatsapp: 0px 4px 14px rgba(0, 0, 0, 0.4);
+$sombra-whatsapp-hover: 0px 6px 18px rgba(0, 0, 0, 0.5);
+
+
+/* =============================
+   VARIABLES DEL CATALOGO
+   ============================= */
+
+// Colores
+$color-borde-catalogo: #f0d2b7;
+$color-icono-pendiente: #ff6500;
+
+// Sombras
+$sombra-tarjeta: 0 4px 12px rgba(0, 0, 0, 0.15);
+$sombra-tarjeta-hover: 0 8px 20px rgba(231, 83, 25, 0.25);
+
+
+/* =============================
+   VARIABLES DE FORMULARIOS
+   ============================= */
+
+$radio-campos: 10px;
+$radio-campos-generales: 9px;
+
+$color-sombra-campos: $color-sombra-input;
+
+$sombra-campo:$sombra-input;
+$sombra-focus-campo: 0 0 0 3px rgba(255, 74, 0, 0.25);
+$sombra-focus-cotizador: 0 0 0 3px rgba(255, 74, 0, 0.2);
+$sombra-seccion-cotizador: 0px 4px 15px rgba(0, 0, 0, 0.12);
+
+
+
+/* =============================
+   VARIABLES DEL CAROUSEL
+   ============================= */
+
+// Fondo de los textos
+$degradado-carousel: linear-gradient(
+    135deg,
+    rgba(58, 28, 13, 0.88),
+    rgba(107, 34, 9, 0.88)
+);
+
+// Sombras
+$sombra-carousel: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+// Estados de los controles
+$color-control-hover: rgba(231, 83, 25, 0.45);
+$color-control-active: rgba(231, 83, 25, 0.75);
+
+
+/* =============================
+   VARIABLES DEL ACCORDION
+   ============================= */
+
+// Colores de interacción
+$color-acordeon-hover: #ffe0c7;
+$color-acordeon-active: #ffd2b0;
+
+// Fondo de la pregunta abierta
+$degradado-acordeon: linear-gradient(
+    135deg,
+    #3a1c0d,
+    #6b2209
+);
+
+// Sombra del foco
+$sombra-focus-acordeon: 0 0 0 3px rgba(255, 74, 0, 0.3);
+
+
+/* =============================
+   VARIABLES DE INICIO
+   ============================= */
+
+// Colores de la lista de servicios
+$color-fondo-servicios: #e25d29;
+$color-borde-servicios: #ee6b37;
+
+// Sombra de los servicios
+$sombra-lista-servicios: 0px 2px 10px $color-borde-servicios;
