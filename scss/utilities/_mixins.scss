@@ -23,3 +23,13 @@
         @content;
     }
 }
+
+/* =============================
+   MIXIN RESPONSIVE CON PARAMETROS
+   ============================= */
+
+@mixin desde($ancho) {
+    @media (min-width: $ancho) {
+        @content;
+    }
+}

@@ -44,3 +44,9 @@ p {
     font-weight: 400;
     margin-bottom: 15px;
 }
+
+/* Animacion */
+
+h1.animate__animated {
+    --animate-duration: 0.4s;
+}

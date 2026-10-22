@@ -6,6 +6,16 @@
 @use "../utilities/variables" as v;
 @use "../utilities/mixins" as m;
 
+
+/* =============================
+   ESTILOS REUTILIZABLES - EXTEND
+   ============================= */
+
+%flex-columna {
+    display: flex;
+    flex-direction: column;
+}
+
 /* =============================
    SECCIONES DEL CATALOGO
    ============================= */
@@ -13,6 +23,7 @@
 .seccion-catalogo {
     padding: 25px;
 }
+
 
 /* =============================
    CONTENEDOR DEL CATALOGO
@@ -23,19 +34,25 @@
     grid-template-columns: 1fr;
     gap: 20px;
 
+    /* Tablet: dos columnas */
+    @include m.desde(768px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     /* Escritorio: tres columnas */
     @include m.escritorio {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
+
 /* =============================
    TARJETAS DEL CATALOGO
    ============================= */
 
 .tarjeta-catalogo {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-columna;
+    // conservar todas las demas propiedades
     background-color: v.$color-claro;
     border: 1px solid v.$color-borde-catalogo;
     border-radius: v.$radio-tarjetas;
@@ -110,8 +127,7 @@
    ============================= */
 
 .imagen-pendiente {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-columna;
     justify-content: center;
     align-items: center;
     gap: 10px;

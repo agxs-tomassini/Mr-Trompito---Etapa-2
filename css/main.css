@@ -130,6 +130,9 @@ figcaption {
 /* =============================
    MIXINS - MR. TROMPITO
    ============================= */
+/* =============================
+   MIXIN RESPONSIVE CON PARAMETROS
+   ============================= */
 /* Titulos principales */
 h1 {
   color: #e75319;
@@ -168,6 +171,11 @@ p {
   font-size: 1.1rem;
   font-weight: 400;
   margin-bottom: 15px;
+}
+
+/* Animacion */
+h1.animate__animated {
+  --animate-duration: 0.4s;
 }
 
 /* =============================
@@ -660,6 +668,14 @@ footer .newsletter-campos input[type=email] {
    CATALOGO - MR. TROMPITO
    ============================= */
 /* =============================
+   ESTILOS REUTILIZABLES - EXTEND
+   ============================= */
+.imagen-pendiente, .tarjeta-catalogo {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================
    SECCIONES DEL CATALOGO
    ============================= */
 .seccion-catalogo {
@@ -673,6 +689,14 @@ footer .newsletter-campos input[type=email] {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  /* Tablet: dos columnas */
+}
+@media (min-width: 768px) {
+  .contenedor-catalogo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.contenedor-catalogo {
   /* Escritorio: tres columnas */
 }
 @media (min-width: 1024px) {
@@ -685,8 +709,6 @@ footer .newsletter-campos input[type=email] {
    TARJETAS DEL CATALOGO
    ============================= */
 .tarjeta-catalogo {
-  display: flex;
-  flex-direction: column;
   background-color: #fff8f2;
   border: 1px solid #f0d2b7;
   border-radius: 16px;
@@ -758,8 +780,6 @@ footer .newsletter-campos input[type=email] {
    IMAGENES PENDIENTES
    ============================= */
 .imagen-pendiente {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -982,6 +1002,7 @@ footer .newsletter-campos input[type=email] {
   overflow: hidden;
   background-color: #292725;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: aparecer-suave 0.65s ease-out both;
   /* =============================
      ELEMENTOS DEL CAROUSEL
      ============================= */
@@ -1065,6 +1086,27 @@ footer .newsletter-campos input[type=email] {
   background-color: rgba(231, 83, 25, 0.75);
 }
 
+/* =============================
+   ANIMACION NATIVA DEL CAROUSEL
+   ============================= */
+@keyframes aparecer-suave {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* =============================
+   ACCESIBILIDAD - MOVIMIENTO REDUCIDO
+   ============================= */
+@media (prefers-reduced-motion: reduce) {
+  .galeria-carousel {
+    animation: none;
+  }
+}
 /* =============================
    ACCORDION - MR. TROMPITO
    ============================= */

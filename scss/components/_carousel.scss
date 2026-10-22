@@ -15,6 +15,7 @@
     overflow: hidden;
     background-color: v.$color-oscuro;
     box-shadow: v.$sombra-carousel;
+    animation: aparecer-suave 0.65s ease-out both;
 
     /* =============================
        ELEMENTOS DEL CAROUSEL
@@ -112,5 +113,31 @@
         &:active {
             background-color: v.$color-control-active;
         }
+    }
+}
+
+/* =============================
+   ANIMACION NATIVA DEL CAROUSEL
+   ============================= */
+
+@keyframes aparecer-suave {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =============================
+   ACCESIBILIDAD - MOVIMIENTO REDUCIDO
+   ============================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .galeria-carousel {
+        animation: none;
     }
 }
