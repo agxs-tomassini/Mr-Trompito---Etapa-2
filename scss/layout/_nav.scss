@@ -11,44 +11,46 @@
    ============================= */
 
 header {
-
     .navbar {
         padding: 0;
 
         /* Enlaces de navegación */
         .nav-link {
-            font-family: v.$fuente-titulos;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: v.$color-crema;
-            border-radius: 10px;
-            padding: 2px 9px;
-            text-align: center;
-            box-shadow: v.$sombra-nav-enlace;
+            font-family: v.$fuente-titulos ;
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 0.01rem;
+            line-height: 1.4;
+            
+            color: v.$paleta-superficie;
+            background: none;
+            background-clip: border-box;
+            -webkit-background-clip: border-box;
+            -webkit-text-fill-color: currentColor;
 
-            transition:
-                background-color 0.3s ease,
-                color 0.3s ease,
-                transform 0.2s ease,
-                box-shadow 0.3s ease;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+
+            padding: 1px 9px;
+            text-align: center;
+            position: relative;
+
+            transition: color 0.3s ease;
 
             /* Hover y focus */
             &:hover,
             &:focus {
-                background-color: v.$color-nav-hover;
-                color: v.$color-blanco;
-                box-shadow: v.$sombra-nav-hover;
+                background-color: transparent;
+                color: v.$paleta-secundario;
+                box-shadow: none;
             }
 
-            /* Hover */
-            &:hover {
-                transform: translateY(-3px);
-            }
 
             /* Foco visible */
             &:focus-visible {
-                outline: 2px solid v.$color-blanco;
-                outline-offset: 2px;
+                outline: 2px solid v.$paleta-secundario;
+                outline-offset: 4px;
             }
 
             /* Click */
@@ -58,70 +60,167 @@ header {
 
             /* Página activa */
             &.active {
-                background-color: v.$color-crema;
-                color: v.$color-primario;
+                background-color: transparent;
+                color: v.$paleta-secundario;
+                box-shadow: none;
+                animation: enlace-activo-vertical 2.4s ease-in-out infinite;
+            }
+
+            /*Posicion de referencia*/
+            position: relative;
+            
+            /*Subrayado*/
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 9px;
+                width: calc(100% - 18px);
+                height: 2px;
+                background-color: v.$paleta-secundario;
+                border-radius: 2px;
+                
+                transform: scaleX(0);
+                transform-origin: left center;
+                transition: transform 0.3s ease;
+            }
+
+            /*Mouse*/
+            &:hover::after,
+            &:focus-visible::after,
+            &.active::after {
+                transform: scaleX(1);
+            }
+
+            /*reducir si se requiere*/
+            @media  (prefers-reduced-motion: reduce) {
+                &::after {
+                    transition: none;
+                }
             }
         }
     }
 
+
+    @keyframes enlace-activo-vertical {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-3px);
+        }
+    } 
+
+
     /* =============================
-       LISTA DE NAVEGACION
-       ============================= */
+    LISTA DE NAVEGACION
+    ============================= */
 
     .navbar-nav {
         gap: 10px;
         padding: 10px 0;
 
-        /* Menú desplegable en móvil */
         @include m.menu-mobile {
-            background: linear-gradient(
-                90deg,
-                v.$color-panel-inicio,
-                v.$color-panel-fin
-            );
-
-            border-radius: 15px;
+            background-color: v.$paleta-primario;
+            border: 1px solid rgba(v.$paleta-secundario, 0.25);
+            border-radius: 14px;
             padding: 15px;
             margin: 10px 0 5px;
-            box-shadow: v.$sombra-panel-mobile;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
             max-height: calc(100vh - 110px);
             overflow-y: auto;
+
+            .nav-link {
+                display: block;
+                width: 100%;
+                padding: 12px 15px;
+                border-radius: 8px;
+                color: v.$paleta-fondo;
+                text-align: left;
+                position: relative;
+
+                transition:
+                    background-color 0.3s ease,
+                    color 0.3s ease;
+
+                &::after {
+                    display: none;
+                }
+
+                &:hover,
+                &:focus-visible {
+                    background-color: rgba(v.$paleta-secundario, 0.12);
+                    color: v.$paleta-secundario;
+                }
+
+                &.active {
+                    background-color: rgba(v.$paleta-secundario, 0.16);
+                    color: v.$paleta-secundario;
+                    animation: none;
+                }
+
+                &.active::before {
+                    content: "";
+                    position: absolute;
+                    left: -12px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 4px;
+                    height: 70%;
+                    background-color: v.$paleta-detalle;
+                    border-radius: 10px;
+                }
+            }
         }
     }
 
     /* =============================
-       BOTON HAMBURGUESA
-       ============================= */
+    BOTON HAMBURGUESA
+    ============================= */
 
     .navbar-toggler {
-        width: 46px;
-        height: 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 35px;
+        height: 35px;
         padding: 0;
-        background-color: v.$color-negro-puro;
-        border-radius: 40%;
-        color: v.$color-crema;
-        box-shadow: v.$sombra-boton-menu;
+
+        background-color: rgba(v.$paleta-secundario, 0.1);
+        border: 1px solid rgba(v.$paleta-secundario, 0.5);
+        border-radius: 12px;
+
+        color: v.$paleta-secundario;
+
+        box-shadow: none;
 
         transition:
             background-color 0.3s ease,
+            border-color 0.3s ease,
             color 0.3s ease,
-            transform 0.2s ease,
-            box-shadow 0.3s ease;
+            transform 0.2s ease;
 
-        /* Íconos */
+        /* ICONOS */
+
         .bi {
             font-size: 1.8rem;
             line-height: 1;
         }
 
-        /* Ícono de cerrar oculto */
         .icono-cerrar {
             display: none;
             font-size: 1.4rem;
         }
 
-        /* Menú abierto */
+        /* MENU ABIERTO */
+
         &[aria-expanded="true"] {
+            background-color: rgba(v.$paleta-secundario, 0.2);
+            border-color: v.$paleta-secundario;
+            color: v.$paleta-fondo;
 
             .icono-abrir {
                 display: none;
@@ -132,27 +231,42 @@ header {
             }
         }
 
-        /* Hover */
+        /* HOVER */
+
         &:hover {
-            background-color: v.$color-crema;
-            color: v.$color-primario;
-            box-shadow: v.$sombra-boton-menu-hover;
+            background-color: rgba(v.$paleta-secundario, 0.25);
+            border-color: v.$paleta-secundario;
+            color: v.$paleta-fondo;
         }
 
-        /* Focus */
+        /* FOCUS */
+
         &:focus {
-            box-shadow: v.$sombra-boton-menu-focus;
+            box-shadow: none;
         }
 
-        /* Focus visible */
         &:focus-visible {
-            outline: 2px solid v.$color-blanco;
-            outline-offset: 3px;
+            outline: 2px solid v.$paleta-secundario;
+            outline-offset: 4px;
         }
 
-        /* Click */
+        /* CLICK */
+
         &:active {
-            transform: scale(0.92);
+            transform: scale(0.94);
+        }
+
+        /* MOVIMIENTO REDUCIDO */
+
+        @media (prefers-reduced-motion: reduce) {
+            transition: none;
+
+            &:active {
+                transform: none;
+            }
         }
     }
 }
+
+
+

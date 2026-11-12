@@ -13,11 +13,13 @@
 
     /* Contenedor de cada pregunta */
     .accordion-item {
-        background-color: v.$color-claro;
-        border: 2px solid v.$color-borde-catalogo;
-        border-radius: 12px;
+        background-color: v.$paleta-superficie;
+        border: 1px solid rgba(v.$paleta-primario, 0.12);
+        border-radius: 10px;
         margin-bottom: 12px;
         overflow: hidden;
+
+        box-shadow: 0 3px 10px rgba(v.$paleta-primario, 0.06);
 
         transition:
             transform 0.3s ease,
@@ -25,7 +27,7 @@
 
         &:hover {
             transform: translateY(-2px);
-            box-shadow: v.$sombra-acordeon-hover;
+            box-shadow: 0 6px 16px rgba(v.$paleta-primario, 0.12);
         }
     }
 
@@ -34,12 +36,15 @@
        ============================= */
 
     .accordion-button {
-        background-color: v.$color-claro;
-        color: v.$color-oscuro;
+        background-color: v.$paleta-superficie;
+        color: v.$paleta-primario;
+
         font-family: v.$fuente-titulos;
-        font-size: 1.4rem;
-        font-weight: 600;
-        padding: 14px 20px;
+        font-size: 1.3rem;
+        font-weight: 700;
+        line-height: 1.3;
+
+        padding: 15px 20px;
         box-shadow: none;
 
         transition:
@@ -48,28 +53,33 @@
 
         /* Hover */
         &:hover {
-            background-color: v.$color-acordeon-hover;
-            color: v.$color-primario;
+            background-color: v.$paleta-fondo;
+            color: v.$paleta-acento;
         }
 
-        /* Focus */
+        /* Foco */
         &:focus {
             border-color: transparent;
-            box-shadow: v.$sombra-focus-acordeon;
+            box-shadow: none;
         }
 
-        /* Click */
-        &:active {
-            background-color: v.$color-acordeon-active;
+        &:focus-visible {
+            outline: 2px solid v.$paleta-acento;
+            outline-offset: -3px;
         }
 
         /* Pregunta abierta */
         &:not(.collapsed) {
-            background: v.$degradado-acordeon;
-            color: v.$color-crema;
+            background-color: v.$paleta-acento;
+            color: v.$paleta-fondo;
             box-shadow: none;
 
-            /* Flecha de la pregunta abierta */
+            &:hover {
+                background-color: v.$paleta-acento;
+                color: v.$paleta-fondo;
+            }
+
+            /* Flecha blanca */
             &::after {
                 filter: brightness(0) invert(1);
             }
@@ -81,10 +91,12 @@
        ============================= */
 
     .accordion-body {
-        background-color: v.$color-claro;
-        padding: 18px 20px 6px;
+        background-color: v.$paleta-fondo;
+        color: v.$paleta-primario;
+        padding: 18px 20px 10px;
 
         p {
+            color: v.$paleta-primario;
             margin-bottom: 12px;
         }
     }
@@ -126,6 +138,10 @@
             &:hover {
                 transform: none;
             }
+        }
+
+        .accordion-button {
+            transition: none;
         }
 
         .accordion-collapse.show .accordion-body {

@@ -16,8 +16,8 @@
 /* Cuerpo de la página */
 
 body {
-    background: linear-gradient(90deg, #ffebd9, #fae3d0);
-    color: v.$color-oscuro;
+    background: v.$paleta-fondo;
+    color: v.$paleta-primario;
     font-family: v.$fuente-principal;
     font-size: 16px;
     line-height: 1.6;
@@ -80,10 +80,12 @@ main {
    ============================= */
 
 section {
-    margin-bottom: 35px;
-    border-radius: v.$radio-secciones;
-    box-shadow: 0px 2px 5px v.$color-borde-catalogo;
-    padding: 10px 15px;
+    margin-bottom: 45px;
+    padding: 15px 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    
 }
 
 /* =============================

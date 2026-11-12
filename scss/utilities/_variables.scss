@@ -2,6 +2,29 @@
    VARIABLES - MR. TROMPITO
    ============================= */
 
+
+/* =============================
+    PALETA - MR. TROMPITO
+   ============================= */
+
+$paleta-primario: #0b1f3b;
+$paleta-acento: #2563eb;
+$paleta-secundario: #60a5fa;
+$paleta-superficie: #dbeafe;
+$paleta-fondo: #f2f7fc;
+$paleta-detalle: #e75319;
+
+
+
+// Colores principales
+$paleta-negro: #061416;
+$paleta-azul-oscuro: #11212d;
+$paleta-azul-medio: #45515a;
+$paleta-gris-oscuro: #5b6f7e;
+$paleta-gris-claro: #74afbd;
+$paleta-naranja: #e75319;
+
+
 // Colores
 $color-primario: #e75319;
 $color-naranja: #ff4000;
@@ -13,8 +36,9 @@ $color-negro-puro: #000000;
 $color-sombra-header: #250d02;
 
 // Tipografías
-$fuente-principal: "Noto Sans", sans-serif;
 $fuente-titulos: "Barlow Condensed", sans-serif;
+$fuente-principal: "Noto Sans", sans-serif;
+$fuente-destacada: "Petit Formal Script", cursive;
 
 // Bordes
 $radio-tarjetas: 16px;

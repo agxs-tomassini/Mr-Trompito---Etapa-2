@@ -8,7 +8,7 @@
     <meta name="keywords" content="sobre Mr. Trompito, quiénes somos, emprendimiento familiar, alquiler de maquinaria, servicios de mudanzas, servicios de fletes, Buenos Aires">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;600;700&amp;family=Petit+Formal+Script&amp;display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -28,11 +28,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="menuPrincipal">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./servicios.html">SERVICIOS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./servicios.html">Servicios</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="./nosotros.html">NOSOTROS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./faq.html">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./cotizador.html">COTIZADOR</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./faq.html">Faq</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./cotizador.html">Cotizador</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,7 +40,7 @@
     </header>     
 <main>
     <section>
-        <h1 class="animate__animated animate__fadeInDown">Conocé a MR. TROMPITO</h1>
+        <h1 class="animate__animated animate__fadeInDown">Conocé a <span class="titulo-destacado">Mr. Trompito</span></h1>
         <p>Mi nombre es Adrián, y me dedico desde aproximadamente 5 años al alquiler de varios elementos para la construcción y progresivamente integré el servicio de traslados y mudanzas. Un servicio de confianza y primer nivel, desde zona norte hasta todo Buenos Aires.</p>
     </section>
     <section>
@@ -57,29 +57,48 @@
     </section>
 </main>
     <footer>
-        <nav>
-            <ul>
-                <li><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="linkFooter">
-                        <img src="../assets/instagram.png" alt="Instagram" class="logoRedes"></a></li>
-                <li><a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="linkFooter">
-                        <img src="../assets/facebook.png" alt="Facebook" class="logoRedes"></a></li>
-                <li><a href="https://x.com" target="_blank" rel="noopener noreferrer" class="linkFooter">
-                    <img src="../assets/x.png" alt="X (Ex Twitter)" class="logoRedes"></a></li>
-            </ul>
-        </nav>
-        <!-- NEWSLETTER -->
+        <div class="footer-informacion">
+            <div class="footer-identidad">
+                <h2>MR. TROMPITO</h2>
+                <p>Maquinaria, mudanzas y fletes.</p>
+            </div>
+            <nav aria-label="Redes sociales de Mr. Trompito">
+                <h2>SEGUINOS EN NUESTRAS REDES</h2>
+                <ul>
+                    <li>
+                        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="linkFooter">
+                            <img src="../assets/instagram.png" alt="Instagram" lass="logoRedes">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="linkFooter">
+                            <img src="../assets/facebook.png" alt="Facebook" class="logoRedes">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="linkFooter">
+                            <img src="../assets/x.png" alt="X" class="logoRedes">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <section class="newsletter">
             <h2>Suscribite al Newsletter</h2>
             <form action="#" method="post" class="formulario-newsletter">
-                <label for="emailNewsletter">Dejanos tu email</label>
+                <label for="emailNewsletter">
+                    Dejanos tu email
+                </label>
                 <div class="newsletter-campos">
-                    <input type="email" id="emailNewsletter" name="email" placeholder="juanperez@gmail.com" required>
+                    <input type="email" id="emailNewsletter" name="email" placeholder="juanperez@gmail.com" autocomplete="email" required>
                     <input type="submit" value="Suscribirme">
                 </div>
             </form>
         </section>
-        <p>&copy; 2026 Mr. Trompito. Todos los derechos reservados.</p>
-    </footer>
+        <p class="footer-copyright">
+            &copy; 2026 Mr. Trompito. Todos los derechos reservados.
+        </p>
+    </footer>    
         <a class="wsp-flotante" href="https://wa.me/5491123345678?text=Hola%20Mr.%20Trompito!%20Quiero%20cotizar%20un%20servicio" target="_blank" rel="noopener noreferrer" aria-label="Cotizá por WhatsApp" title="Cotizá por WhatsApp">
             <i class="bi bi-whatsapp" aria-hidden="true"></i>
         </a>

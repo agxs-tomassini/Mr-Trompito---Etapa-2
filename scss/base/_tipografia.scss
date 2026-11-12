@@ -1,3 +1,4 @@
+
 /* =============================
    TIPOGRAFIA - MR. TROMPITO
    ============================= */
@@ -5,48 +6,97 @@
 @use "../utilities/variables" as v;
 @use "../utilities/mixins" as m;
 
-/* Titulos principales */
+/* =============================
+   TITULOS PRINCIPALES
+   ============================= */
 
 h1 {
-    color: v.$color-primario;
+    color: v.$paleta-primario;
     font-family: v.$fuente-titulos;
     font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 15px;
+    font-weight: 760;
+    line-height: 1.15;
+    letter-spacing: -0.036em;
+    margin-bottom: 20px;
+
     @include m.escritorio {
-    font-size: 3rem;
+        font-size: 3.6rem;
     }
 }
 
 h2 {
-    color: v.$color-oscuro;
+    color: v.$paleta-primario;
     font-family: v.$fuente-titulos;
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 15px;
+    line-height: 1.2;
+    letter-spacing: 0.015em;
+    margin-bottom: 18px;
 }
 
 h3 {
-    color: v.$color-oscuro;
+    color: v.$paleta-primario;
     font-family: v.$fuente-titulos;
     font-size: 1.5rem;
     font-weight: 600;
+    line-height: 1.3;
     margin-bottom: 10px;
+    letter-spacing: 0.01rem;
+    margin-bottom: 12px;
 }
 
-/* Parrafos */
+/* =============================
+   PARRAFOS
+   ============================= */
 
 p {
-    color: v.$color-oscuro;
-    font-family: v.$fuente-titulos;
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-bottom: 15px;
+    color: v.$paleta-primario;
+    font-family: v.$fuente-principal;
+    font-size: 1rem;
+    font-weight: 450;
+    line-height: 1.70;
+    letter-spacing: -0.020rem;
+    margin-bottom: 1rem;
+
+    @include m.escritorio {
+        font-size: 1.0925rem;
+    }
 }
 
-/* Animacion */
+/* =============================
+   ANIMACIONES
+   ============================= */
 
 h1.animate__animated {
     --animate-duration: 0.4s;
+}
+
+/* =============================
+  DISTRIBUCION DE TEXTO
+   ============================= */
+
+h1,
+h2,
+h3 {
+    text-wrap: balance;
+}
+
+p{
+    text-wrap: pretty;
+}
+
+
+/* =============================
+   PALABRAS DESTACADAS EN TITULOS
+   ============================= */
+
+.titulo-destacado {
+    display: inline-block;
+    margin-inline:0.20em;
+    font-family: v.$fuente-destacada;
+    font-weight: 600;
+    font-size: 3.3rem;
+    line-height: 1;
+    color: v.$paleta-detalle;
+    letter-spacing: 1;
 }

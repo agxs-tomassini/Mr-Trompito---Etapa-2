@@ -12,13 +12,13 @@
 
 footer {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 30px;
-    padding: 30px 25px;
-    background-color: v.$color-negro;
-    color: v.$color-claro;
 
-    /* Distribución en escritorio */
+    padding: 35px 25px;
+    background-color: v.$paleta-primario;
+    color: v.$paleta-fondo;
+
     @include m.desktop-bootstrap {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         column-gap: 40px;
@@ -26,40 +26,113 @@ footer {
     }
 
     /* =============================
-       NAVEGACION DEL FOOTER
+       IDENTIDAD Y REDES
+       ============================= */
+
+    .footer-informacion {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+        min-width: 0;
+    }
+
+    .footer-identidad {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        h2 {
+            margin: 0;
+            color: v.$paleta-fondo;
+            font-family: v.$fuente-titulos;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            margin: 0;
+            color: v.$paleta-superficie;
+            font-family: v.$fuente-principal;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    }
+
+    /* =============================
+       NAVEGACION DE REDES
        ============================= */
 
     nav {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 5px;
+
+        h2 {
+            margin: 0;
+            color: v.$paleta-fondo;
+            font-family: v.$fuente-titulos;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
 
         ul {
             display: flex;
+            align-items: center;
+            flex-wrap: wrap;
             gap: 20px;
+
             list-style: none;
-            margin-bottom: 0;
+            padding: 0;
+            margin: 0;
         }
 
         li {
             margin: 0;
         }
-    }
 
-    /* =============================
-       TEXTOS DEL FOOTER
-       ============================= */
+        .linkFooter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
 
-    p {
-        color: v.$color-claro;
-        margin-bottom: 0;
-    }
+            border-radius: 6px;
+            color: v.$paleta-secundario;
+            text-decoration: none;
 
-    h2 {
-        color: v.$color-claro;
-        font-size: 1.5rem;
-        margin-bottom: 0;
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
+
+            &:hover {
+                transform: translateY(-4px);
+                opacity: 0.85;
+            }
+
+            &:focus-visible {
+                outline: 2px solid v.$paleta-secundario;
+                outline-offset: 4px;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+
+        
+
+            ul li img {
+                display: block;
+                width: 35px;
+                height: 35px;
+                min-width: 35px;
+                max-width: 35px;
+                object-fit: contain;
+                object-position: center;
+            }
+
     }
 
     /* =============================
@@ -67,28 +140,53 @@ footer {
        ============================= */
 
     .newsletter {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
         width: 100%;
+        min-width: 0;
         margin: 0;
         padding: 0;
+
         background-color: transparent;
-        box-shadow: none;
+        border: none;
         border-radius: 0;
-        font-size: 13px;
-        color: v.$color-enlaces;
+        box-shadow: none;
+
+        color: v.$paleta-superficie;
 
         @include m.desktop-bootstrap {
             max-width: 430px;
             justify-self: end;
         }
-    }
 
-    .formulario-newsletter {
-        width: 100%;
+        h2 {
+            margin: 0;
+            color: v.$paleta-fondo;
+            font-family: v.$fuente-titulos;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
     }
 
     /* =============================
-       CAMPOS DEL NEWSLETTER
+       FORMULARIO NEWSLETTER
        ============================= */
+
+    .formulario-newsletter {
+        width: 100%;
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+
+            color: v.$paleta-fondo;
+            font-family: v.$fuente-titulos;
+            font-size: 17px;
+            font-weight: 600;
+        }
+    }
 
     .newsletter-campos {
         display: flex;
@@ -96,155 +194,129 @@ footer {
         align-items: center;
         gap: 10px;
 
+        /* CAMPO EMAIL */
+
         input[type="email"] {
             flex: 1 1 220px;
             min-width: 0;
             max-width: 360px;
+
+            padding: 10px 14px;
+            border: 1px solid v.$paleta-superficie;
+            border-radius: 12px;
+
+            background-color: v.$paleta-fondo;
+            color: v.$paleta-primario;
+
+            font-family: v.$fuente-principal;
+            font-size: 1rem;
+
+            box-shadow: none;
+
+            transition:
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+
+            &:hover {
+                border-color: v.$paleta-secundario;
+            }
+
+            &:focus {
+                border-color: v.$paleta-secundario;
+                box-shadow: 0 0 0 3px rgba(v.$paleta-secundario, 0.2);
+                outline: none;
+            }
+        }
+
+        /* BOTON SUSCRIBIRME */
+
+        input[type="submit"] {
+            padding: 9px 20px;
+            border: 1px solid v.$paleta-acento;
+            border-radius: 12px;
+
+            background-color: v.$paleta-acento;
+            color: #ffffff;
+
+            font-family: v.$fuente-titulos;
+            font-size: 1.1rem;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                background-color 0.3s ease,
+                border-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.2s ease;
+
+            &:hover {
+                background-color: v.$paleta-secundario;
+                border-color: v.$paleta-secundario;
+                color: v.$paleta-primario;
+            }
+
+            &:focus-visible {
+                outline: 2px solid v.$paleta-secundario;
+                outline-offset: 3px;
+            }
+
+            &:active {
+                transform: scale(0.96);
+            }
         }
     }
-}
 
-/* =============================
-   REDES SOCIALES
-   ============================= */
+    /* =============================
+       COPYRIGHT
+       ============================= */
 
-.footer-redes {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
+    .footer-copyright {
+        grid-column: 1 / -1;
 
-    ul {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        list-style: none;
-        padding: 0;
+        width: 100%;
         margin: 0;
-    }
-}
+        padding-top: 22px;
 
-/* Enlaces de redes sociales */
+        border-top: 1px solid rgba(v.$paleta-superficie, 0.2);
 
-.linkFooter {
-    display: inline-block;
-    color: v.$color-enlaces;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 6px;
-
-    transition:
-        transform 0.3s ease,
-        opacity 0.3s ease;
-
-    &:hover {
-        color: v.$color-enlaces-hover;
-        transform: translateY(-4px);
-        opacity: 0.8;
-    }
-
-    &:focus-visible {
-        outline: 2px solid v.$color-enlaces;
-        outline-offset: 4px;
-    }
-
-    &:active {
-        transform: translateY(0) scale(0.92);
-    }
-}
-
-/* Íconos de redes sociales */
-
-.logoRedes {
-    width: 33px;
-    height: 33px;
-    display: block;
-}
-
-/* =============================
-   FORMULARIO DEL NEWSLETTER
-   ============================= */
-
-.formulario-newsletter {
-
-    label {
-        display: block;
-        font-weight: 600;
-        margin-bottom: 5px;
-    }
-}
-
-.newsletter-campos {
-
-    input[type="email"] {
-        background-color: v.$color-claro;
-        border: 2px solid v.$color-claro;
-        border-radius: 9px;
-        color: v.$color-oscuro;
-        font-family: v.$fuente-principal;
-        font-size: 1rem;
-        min-width: 240px;
-        padding: 8px 12px;
-        box-shadow: none;
-
-        transition:
-            border-color 0.3s ease,
-            box-shadow 0.3s ease;
-
-        &:hover {
-            border-color: v.$color-borde-input;
-        }
-
-        &:focus {
-            border-color: v.$color-enlaces;
-            box-shadow: v.$sombra-focus-newsletter;
-            outline: none;
-        }
-    }
-
-    input[type="submit"] {
-        background-color: v.$color-enlaces;
-        border: 2px solid v.$color-enlaces;
-        border-radius: 9px;
-        color: v.$color-claro;
-        cursor: pointer;
+        color: v.$paleta-superficie;
         font-family: v.$fuente-titulos;
         font-size: 1.1rem;
-        font-weight: 700;
-        padding: 6px 20px;
+        line-height: 1.5;
+        text-align: center;
 
-        transition:
-            background-color 0.3s ease,
-            border-color 0.3s ease,
-            color 0.3s ease,
-            transform 0.2s ease;
+        /* LINEA NARANJA INFERIOR */
 
-        &:hover {
-            background-color: v.$color-claro;
-            border-color: v.$color-claro;
-            color: v.$color-oscuro;
-        }
+        &::after {
+            content: "";
+            display: block;
 
-        &:focus-visible {
-            outline: 2px solid v.$color-claro;
-            outline-offset: 3px;
-        }
+            width: 255px;
+            height: 3px;
+            margin: 15px auto 0;
 
-        &:active {
-            transform: scale(0.95);
+            background-color: v.$paleta-detalle;
+            border-radius: 3px;
         }
     }
 }
 
 /* =============================
-   DERECHOS DE AUTOR
+   ACCESIBILIDAD
    ============================= */
 
-.footer-copyright {
-    grid-column: 1 / -1;
-    width: 100%;
-    margin: 0;
-    padding-top: 20px;
-    border-top: 1px solid v.$color-borde-footer;
-    text-align: center;
+@media (prefers-reduced-motion: reduce) {
+    footer {
+        .linkFooter,
+        .newsletter-campos input {
+            transition: none;
+        }
+
+        .linkFooter:hover,
+        .linkFooter:active,
+        .newsletter-campos input:active {
+            transform: none;
+        }
+    }
 }

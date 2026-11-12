@@ -6,51 +6,71 @@
 @use "../utilities/variables" as v;
 @use "../utilities/mixins" as m;
 
+   
 /* =============================
    BOTONES DE COTIZACION
    ============================= */
 
 .boton-cotizar {
-    background-color: v.$color-primario;
-    border: 2px solid v.$color-primario;
-    border-radius: v.$radio-botones;
-    color: v.$color-crema;
-    cursor: pointer;
-    font-family: v.$fuente-titulos;
-    font-size: 1.2rem;
-    font-weight: 700;
-    padding: 6px 24px;
-    box-shadow: v.$sombra-boton-cotizar;
+    /* Distribución */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 
+    /* Nueva paleta */
+    background-color: v.$paleta-acento;
+    border: 2px solid v.$paleta-acento;
+    border-radius: 8px;
+    color: v.$paleta-fondo;
+
+    /* Tipografía */
+    font-family: v.$fuente-titulos;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    text-decoration: none;
+
+    /* Espaciado */
+    padding: 9px 22px;
+    cursor: pointer;
+
+    /* Apariencia */
+    box-shadow: 0 3px 10px rgba(v.$paleta-primario, 0.12);
+
+    /* Transiciones */
     transition:
-        background-color 0.3s ease,
-        border-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.2s ease;
-        box-shadow: 0.3s ease;
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 
     /* Hover */
     &:hover {
-        background-color: v.$color-oscuro;
-        border-color: v.$color-oscuro;
-        color: v.$color-blanco;
-        transform: translateY(-3px);
-        box-shadow: v.$sombra-boton-cotizar-hover;
+        background-color: v.$paleta-primario;
+        border-color: v.$paleta-primario;
+        color: v.$paleta-fondo;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 14px rgba(v.$paleta-primario, 0.18);
     }
 
     /* Foco mediante teclado */
     &:focus-visible {
-        outline: 2px solid v.$color-oscuro;
+        outline: 2px solid v.$paleta-acento;
         outline-offset: 3px;
     }
 
     /* Click */
     &:active {
-        background-color: v.$color-negro;
-        border-color: v.$color-negro;
-        transform: scale(0.96);
+        background-color: v.$paleta-primario;
+        border-color: v.$paleta-primario;
+        color: v.$paleta-fondo;
+        transform: scale(0.97);
     }
 }
+
 
 
 /* =============================
