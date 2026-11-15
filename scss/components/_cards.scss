@@ -64,12 +64,10 @@
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
-        border-color: 0.25s ease;
 
     /* Hover de la tarjeta */
     &:hover {
         transform: translateY(-3px);
-        border-color: v.$paleta-secundario;
         box-shadow:
             0 10px 28px rgba(v.$paleta-primario, 0.16),
             0 3px 8px rgba(v.$paleta-primario, 0.08);
@@ -78,7 +76,6 @@
 
     /* Foco dentro de la tarjeta */
     &:focus-within {
-        border-color: v.$paleta-secundario;
         box-shadow: 0 0 0 2px rgba(v.$paleta-acento, 0.4);
     }
 
@@ -164,14 +161,14 @@
         border-radius: 8px;
         box-shadow: none;
         transition: 
-            background-color 0.25s ease
-            color 0.25s ease
+            background-color 0.25s ease,
+            color 0.25s ease,
             box-shadow 0.25s ease;
 
         &:hover {
             background-color: v.$paleta-primario;
             color: v.$paleta-fondo;
-            box-shadow: 0 4px 10px rgba(v.$paleta-negro, 0.15);
+            box-shadow: 0 4px 10px rgba(v.$paleta-primario, 0.15);
         }
 
         &:focus-visible {
@@ -206,8 +203,8 @@
     margin-bottom: 14px;
     padding: 20px;
 
-    background-color: v.$paleta-negro;
-    border: 1px dashed v.$paleta-gris-oscuro;
+    background-color: v.$paleta-primario;
+    border: 1px dashed rgba(v.$paleta-secundario,0.55);
     border-radius: 8px;
     box-shadow: none;
 
@@ -216,7 +213,7 @@
 
     /* Ícono */
     .bi {
-        color: v.$paleta-naranja;
+        color: v.$paleta-detalle;
         font-size: 2.5rem;
         line-height: 1;
     }

@@ -71,24 +71,6 @@
     }
 }
 
-
-
-/* =============================
-   ACCESIBILIDAD - MOVIMIENTO REDUCIDO
-   ============================= */
-
-@media (prefers-reduced-motion: reduce) {
-    .boton-cotizar {
-        transition: none;
-
-        &:hover,
-        &:active {
-            transform: none;
-        }
-    }
-}
-
-
 /* =============================
    BOTON FLOTANTE WHATSAPP
    ============================= */
@@ -153,5 +135,23 @@
         right: 15px;
         bottom: 15px;
         font-size: 1.8rem;
+    }
+}
+
+
+/* =============================
+   ACCESIBILIDAD - MOVIMIENTO REDUCIDO
+   ============================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .boton-cotizar,
+    .wsp-flotante {
+        transition: none;
+
+        &:hover,
+        &:active {
+            transform: none;
+        }
     }
 }

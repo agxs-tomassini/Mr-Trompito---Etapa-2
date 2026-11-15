@@ -6,28 +6,35 @@
 @use "../utilities/variables" as v;
 @use "../utilities/mixins" as m;
 
-/* Encabezado principal */
+/* =============================
+   ENCABEZADO PRINCIPAL
+   ============================= */
 
 header {
     padding: 1px 30px;
     background-color: v.$paleta-primario;
-    box-shadow: 0px 2px 8px v.$color-sombra-header;
-    
 
-    /* Responsive para dispositivos móviles */
+    box-shadow:
+        0 2px 8px rgba(v.$paleta-primario, 0.25);
+
+    /* MOBILE */
+
     @include m.menu-mobile {
         padding: 6px 15px;
     }
 }
 
-/* Logo principal */
+/* =============================
+   LOGO PRINCIPAL
+   ============================= */
 
 .logo {
     display: block;
     width: 350px;
     height: auto;
 
-    /* Responsive para dispositivos móviles */
+    /* MOBILE */
+
     @include m.menu-mobile {
         width: 160px;
     }

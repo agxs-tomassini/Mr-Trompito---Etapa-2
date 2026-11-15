@@ -24,9 +24,6 @@ header {
             
             color: v.$paleta-superficie;
             background: none;
-            background-clip: border-box;
-            -webkit-background-clip: border-box;
-            -webkit-text-fill-color: currentColor;
 
             border: none;
             border-radius: 0;
@@ -99,7 +96,26 @@ header {
                 }
             }
         }
+        
+        /* =============================
+        MOVIMIENTO REDUCIDO
+        ============================= */
+
+        @media (prefers-reduced-motion: reduce) {
+            .navbar .nav-link {
+                transition: none;
+
+                &.active {
+                    animation: none;
+                }
+
+                &::after {
+                    transition: none;
+                }
+            }
+        }
     }
+
 
 
     @keyframes enlace-activo-vertical {
@@ -139,7 +155,6 @@ header {
                 border-radius: 8px;
                 color: v.$paleta-fondo;
                 text-align: left;
-                position: relative;
 
                 transition:
                     background-color 0.3s ease,

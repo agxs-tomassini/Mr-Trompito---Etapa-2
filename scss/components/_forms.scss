@@ -7,266 +7,51 @@
 
 @use "../utilities/mixins" as m;
 
-
-/* =============================
-   FORMULARIOS GENERALES
-   ============================= */
-
-.formulario-contacto {
-    margin-top: 25px;
-
-    label {
-        display: block;
-        font-weight: 600;
-        margin-bottom: 5px;
-    }
-
-    input,
-    textarea {
-        border: 2px solid v.$color-claro;
-        border-radius: v.$radio-campos-generales;
-        font-family: v.$fuente-principal;
-        font-size: 1rem;
-        margin-bottom: 20px;
-        padding: 10px;
-        width: 100%;
-        box-shadow: v.$sombra-campo;
-
-        transition:
-            border-color 0.3s ease,
-            box-shadow 0.3s ease;
-
-        &:hover {
-            border-color: v.$color-borde-input;
-        }
-
-        &:focus {
-            border-color: v.$color-enlaces;
-            outline: none;
-            box-shadow: v.$sombra-focus-campo;
-        }
-    }
-
-    textarea {
-        min-height: 150px;
-        resize: vertical;
-    }
-
-    input[type="submit"] {
-        background-color: v.$color-enlaces;
-        border: 2px solid v.$color-enlaces;
-        color: v.$color-claro;
-        cursor: pointer;
-        font-family: v.$fuente-titulos;
-        font-size: 1.2rem;
-        font-weight: 700;
-        width: auto;
-        box-shadow: 0px 2px 5px v.$color-borde-input;
-
-        transition:
-            background-color 0.3s ease,
-            border-color 0.3s ease,
-            box-shadow 0.3s ease,
-            transform 0.2s ease;
-
-        &:hover {
-            background-color: v.$color-oscuro;
-            border-color: v.$color-oscuro;
-            box-shadow: 0px 2px 5px v.$color-oscuro;
-        }
-
-        &:focus-visible {
-            outline: 2px solid v.$color-oscuro;
-            outline-offset: 3px;
-        }
-
-        &:active {
-            transform: scale(0.96);
-        }
-    }
-}
-
-/* =============================
-   SECCIONES DEL COTIZADOR
-   ============================= */
-
-.seccion-cotizador {
-    background-color: v.$color-claro;
-    padding: 25px;
-    border-radius: v.$radio-secciones;
-    margin-bottom: 35px;
-    box-shadow: v.$sombra-seccion-cotizador;
-
-    h2 {
-        border-left: 5px solid v.$color-enlaces;
-        padding-left: 15px;
-
-        .bi {
-            color: v.$color-enlaces;
-            margin-right: 10px;
-            font-size: 1.8rem;
-        }
-    }
-
-    .formulario-contacto {
-        width: 100%;
-        max-width: none;
-        margin: 25px 0 0;
-
-        input:focus,
-        textarea:focus {
-            border-color: v.$color-enlaces;
-            box-shadow: v.$sombra-focus-cotizador;
-            outline: none;
-        }
-    }
-
-    select {
-        display: block;
-        width: 100%;
-        margin-bottom: 20px;
-        cursor: pointer;
-
-        transition:
-            border-color 0.3s ease,
-            box-shadow 0.3s ease;
-
-        &:hover {
-            border-color: v.$color-borde-input;
-        }
-
-        &:focus {
-            border-color: v.$color-enlaces;
-            box-shadow: v.$sombra-focus-cotizador;
-            outline: none;
-        }
-    }
-
-    .boton-cotizar {
-        padding: 12px 24px;
-        font-size: 1.3rem;
-    }
-}
-
 /* =============================
    COTIZADOR CON BOOTSTRAP
    ============================= */
 
 .fila-cotizadores {
-
-    /* Contenedores de ambos formularios */
-    .seccion-cotizador {
-        width: 100%;
-        padding: 20px;
-        margin-bottom: 0;
-    }
-
-    /* Formulario */
-    .formulario-contacto {
-        width: 100%;
-        margin-top: 12px;
-    }
-
-    /* Etiquetas de los campos */
-    .form-label {
-        margin-bottom: 4px;
-        font-size: 0.9rem;
-    }
-
-    /* Campos de Bootstrap */
-    .form-control,
-    .form-select {
-        margin-bottom: 0;
-        padding: 8px 10px;
-        font-size: 0.95rem;
-    }
-
-    /* Selectores de Bootstrap */
-    .form-select {
-        background-color: v.$color-blanco;
-        border: 2px solid v.$color-borde-catalogo;
-        border-radius: v.$radio-campos;
-        font-family: v.$fuente-principal;
-        box-shadow: v.$sombra-campo;
-
-        &:focus {
-            border-color: v.$color-enlaces;
-            box-shadow: v.$sombra-focus-cotizador;
-        }
-    }
-
-    /* Comentarios y descripción */
-    textarea.form-control {
-        min-height: 90px;
-    }
-
-    /* Botones compactos */
-    .boton-cotizar {
-        width: auto;
-        max-width: 100%;
-        margin: 0;
-        padding: 10px 28px;
-        font-size: 1.1rem;
-
-        &:hover {
-            background-color: v.$color-oscuro;
-            border-color: v.$color-oscuro;
-            color: v.$color-blanco;
-        }
-    }
-}
-
-
-/* =============================
-   NUEVA DISTRIBUCION DEL COTIZADOR
-   ============================= */
-
-.fila-cotizadores {
-
     .seccion-cotizador {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
         align-items: stretch;
         gap: 20px;
 
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 0;
+
         background-color: v.$paleta-superficie;
         border: none;
         border-radius: 12px;
+
         box-shadow:
             0 6px 15px rgba(v.$paleta-primario, 0.12),
-            0 2px 5px rgba(v.$paleta-primario, 0.06); 
-        
-            /* Panel lateral en pantallas amplias */
+            0 2px 5px rgba(v.$paleta-primario, 0.06);
+
+        transition: box-shadow 0.3s ease;
+
+        /* PANEL LATERAL EN ESCRITORIO */
+
         @include m.desde(1200px) {
             grid-template-columns:
                 minmax(0, 0.85fr)
                 minmax(0, 1.65fr);
         }
 
-       
-        transition: box-shadow 0.3s ease;
+        /* HOVER */
 
         &:hover {
             box-shadow:
                 0 10px 28px rgba(v.$paleta-primario, 0.16),
                 0 3px 8px rgba(v.$paleta-primario, 0.08);
         }
-
-        @media (prefers-reduced-motion: reduce) {
-            transition: none;
-        }
-
-        
     }
 
     /* =============================
        PANEL DE PRESENTACION
        ============================= */
-
-    
-    /* =============================
-    PANEL LATERAL DEL COTIZADOR
-    ============================= */
 
     .cotizador-presentacion {
         display: flex;
@@ -281,22 +66,25 @@
         background-color: v.$paleta-primario;
         border-radius: 10px;
 
-        /* Titulo */
+        /* TITULO */
+
         h2 {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
             color: v.$paleta-fondo;
             font-family: v.$fuente-titulos;
             font-size: 1.55rem;
             font-weight: 700;
             line-height: 1.15;
             letter-spacing: 0.01em;
-            width: 100%;
+
             text-align: center;
-
             border: none;
-            padding: 0;
-            margin: 0;
 
-            /* Icono destacado */
+            /* ICONO */
+
             .bi {
                 display: flex;
                 align-items: center;
@@ -307,39 +95,44 @@
                 margin: 0 auto 16px;
 
                 color: v.$paleta-secundario;
-                background-color: rgba(v.$paleta-fondo, 0.1);
+                background-color:
+                    rgba(v.$paleta-fondo, 0.1);
 
                 font-size: 2rem;
                 border-radius: 12px;
             }
         }
 
-        /* Descripcion */
+        /* DESCRIPCION */
+
         p {
+            margin: 0;
+
             color: v.$paleta-fondo;
             font-family: v.$fuente-principal;
             font-size: 0.85rem;
             font-weight: 400;
             line-height: 1.5;
             letter-spacing: -0.01em;
-            margin: 0;
         }
 
-        /* Detalle naranja */
+        /* LINEA NARANJA */
+
         &::after {
             content: "";
             display: block;
-            width: 245px;
+
+            width: min(245px, 100%);
             height: 3px;
+            flex-shrink: 0;
 
             background-color: v.$paleta-detalle;
             border-radius: 3px;
         }
     }
 
-
     /* =============================
-       CAMPOS DEL FORMULARIO
+       FORMULARIOS
        ============================= */
 
     .formulario-contacto {
@@ -349,36 +142,33 @@
         margin: 0;
 
         justify-self: center;
-    }
-}
 
+        /* ETIQUETAS */
 
-/* =============================
-   CAMPOS Y ETIQUETAS - NUEVA PALETA
-   ============================= */
-
-.fila-cotizadores {
-
-    .formulario-contacto {
-
-        /* Etiquetas */
         .form-label {
+            margin-bottom: 4px;
+
             color: v.$paleta-primario;
             font-family: v.$fuente-principal;
             font-size: 0.9rem;
             font-weight: 600;
         }
 
-        /* Campos de texto y selectores */
+        /* CAMPOS Y SELECTORES */
+
         .form-control,
         .form-select {
             width: 100%;
+            margin-bottom: 0;
+            padding: 8px 10px;
 
             background-color: #ffffff;
             color: v.$paleta-primario;
 
-            border: 1px solid rgba(v.$paleta-primario, 0.22);
+            border: 1px solid
+                rgba(v.$paleta-primario, 0.22);
             border-radius: 8px;
+
             box-shadow: none;
 
             font-family: v.$fuente-principal;
@@ -388,25 +178,65 @@
                 border-color 0.25s ease,
                 box-shadow 0.25s ease;
 
-            /* Hover */
             &:hover {
                 border-color: v.$paleta-secundario;
             }
 
-            /* Campo seleccionado */
             &:focus {
                 border-color: v.$paleta-acento;
                 outline: none;
 
-                box-shadow: 0 0 0 0.2rem
+                box-shadow:
+                    0 0 0 0.2rem
                     rgba(v.$paleta-acento, 0.16);
             }
         }
 
-        /* Texto de ejemplo */
+        /* SELECTORES */
+
+        .form-select {
+            cursor: pointer;
+        }
+
+        /* TEXTO DE EJEMPLO */
+
         .form-control::placeholder {
             color: rgba(v.$paleta-primario, 0.6);
             opacity: 1;
+        }
+
+        /* COMENTARIOS */
+
+        textarea.form-control {
+            min-height: 90px;
+            resize :vertical;
+        }
+    }
+
+    /* =============================
+       BOTON DE COTIZACION
+       ============================= */
+
+    .boton-cotizar {
+        width: auto;
+        max-width: 100%;
+        margin: 0;
+        padding: 10px 28px;
+        font-size: 1.1rem;
+    }
+
+    /* =============================
+       ACCESIBILIDAD
+       ============================= */
+
+    @media (prefers-reduced-motion: reduce) {
+        .seccion-cotizador {
+            transition: none;
+        }
+
+        .form-control,
+        .form-select {
+            transition: none;
         }
     }
 }

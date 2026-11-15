@@ -141,6 +141,7 @@
     }
 }
 
+
 /* =============================
    ACCESIBILIDAD - MOVIMIENTO REDUCIDO
    ============================= */
@@ -148,5 +149,11 @@
 @media (prefers-reduced-motion: reduce) {
     .galeria-carousel {
         animation: none;
+
+        .carousel-indicators [data-bs-target],
+        .carousel-control-prev,
+        .carousel-control-next {
+            transition: none;
+        }
     }
 }

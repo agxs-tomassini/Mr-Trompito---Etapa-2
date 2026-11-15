@@ -100,6 +100,13 @@
             margin-bottom: 12px;
         }
     }
+
+    .accordion-collapse.show{
+        .accordion-body {
+            animation: mostrar respuesta 0.3s ease-out both;
+        }
+    }
+
 }
 
 /* =============================
@@ -118,13 +125,6 @@
     }
 }
 
-.faq-acordeon {
-    .accordion-collapse.show {
-        .accordion-body {
-            animation: mostrar-respuesta 0.3s ease-out both;
-        }
-    }
-}
 
 /* =============================
    ACCESIBILIDAD
